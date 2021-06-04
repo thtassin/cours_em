@@ -1,0 +1,137 @@
+% % % % % % % % % % % % % % % % % % % %% % % % % % % % % %% % % % % % % % % %
+% Cours Électromagnétisme
+% Version: 24 Novembre 2020
+% % % % % % % % % % % % % % % % % % % %% % % % % % % % % %% % % % % % % % % %
+\documentclass[12pt]{book}
+\usepackage[minitoc]{teach}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{framed}
+\usepackage{enumitem}
+\usepackage{palatino}
+\usepackage{natbib}
+\usepackage[sectionbib]{bibunits}
+\usepackage{pxfonts}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage[squaren,Gray,cdot]{SIunits}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\definecolor{royalblue}{rgb}{0.22,0.45,0.7}
+\hypersetup{
+	colorlinks=True,
+	urlcolor=royalblue,
+	linkcolor=royalblue,
+	citecolor=royalblue
+           }
+\newcommand{\todo}[1]{{\color{red} [TODO: #1]}}
+\renewcommand{\FrenchLabelItem}{\textbullet}
+% ----------------------------------------------------------------------------
+% Notations
+% ----------------------------------------------------------------------------
+\newcommand{\mitbf}[1]{\hbox{\mathversion{bold}$#1$}}
+\renewcommand{\phi}{\varphi}
+
+%Constante
+\newcommand{\pieps}{\dfrac{1}{4\pi\epsilon_0}}
+
+%Vecteurs
+\newcommand{\vece}{\mitbf{E}}
+\newcommand{\vecg}{\mitbf{g}}
+\newcommand{\vecn}{\mitbf{n}}
+\newcommand{\vecd}{\mathrm{\textbf{d}}}
+\newcommand{\vecm}{\mitbf{m}}
+\newcommand{\vecM}{\mitbf{M}}
+\newcommand{\vecs}{\mitbf{S}}
+\newcommand{\veca}{\mitbf{A}}
+\newcommand{\vecH}{\mitbf{H}}
+\newcommand{\vecb}{\mitbf{B}}
+\newcommand{\vecf}{\mitbf{F}}
+\newcommand{\vecj}{\mitbf{j}}
+\newcommand{\vecv}{\mitbf{v}}
+\newcommand{\er}{\mitbf{e_r}}
+\newcommand{\etheta}{\mitbf{e_\theta}}
+\newcommand{\ephi}{\mitbf{e_\phi}}
+\newcommand{\ex}{\mitbf{e_x}}
+\newcommand{\ey}{\mitbf{e_y}}
+\newcommand{\ez}{\mitbf{e_z}}
+\newcommand{\ds}{\mathrm{d}\mitbf{S}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\complex}[1]{\underline{#1}}
+
+%Derivative
+\newcommand{\grad}{\mitbf{\nabla}}
+\newcommand{\laplacien}{\grad^2}
+\newcommand{\dV}{\mathrm{d}V}
+\newcommand{\dtheta}{\mathrm{d}\theta}
+\newcommand{\dphi}{\mathrm{d}\varphi}
+\newcommand{\dr}{\mathrm{d}r}
+\newcommand{\dt}{\mathrm{d}t}
+\newcommand{\dx}{\mathrm{d}x}
+\newcommand{\dy}{\mathrm{d}y}
+\newcommand{\dz}{\mathrm{d}z}
+\newcommand{\dl}{\mathrm{\textbf{d}}\mitbf{\ell}}
+\renewcommand{\div}{\mathrm{div}\,}
+\newcommand{\rot}{\mathrm{\textbf{rot}}\,}
+\newcommand{\gradient}{\mathrm{\textbf{grad}}\,}
+\newcommand{\ddtheta}{\partial \theta}
+\newcommand{\ddphi}{\partial \varphi}
+\newcommand{\ddr}{\partial r}
+\newcommand{\ddx}{\partial x}
+\newcommand{\dd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\dn}[2]{\dfrac{\mathrm{d} #1}{\mathrm{d} #2}}
+
+% ----------------------------------------------------------------------------
+% Documents
+% ----------------------------------------------------------------------------
+\begin{document}
+\dominitoc
+\tableofcontents
+\defaultbibliographystyle{gji}
+
+\begin{bibunit}
+\graphicspath{{Chapitre_1/figure/}}
+\include{Chapitre_1/cours/electrostatique}
+\nocite{*}
+\putbib[Chapitre_1/electrostatique]
+\newpage
+\include{Chapitre_1/exercice/electrostatique}
+\end{bibunit}
+
+\begin{bibunit}
+\graphicspath{{Chapitre_2/figure/}}
+\include{Chapitre_2/cours/metaux}
+\nocite{*}
+\putbib[Chapitre_2/metaux]
+\include{Chapitre_2/exercice/metaux}
+\end{bibunit}
+
+\begin{bibunit}
+\graphicspath{{Chapitre_3/figure/}}
+\include{Chapitre_3/cours/magnetostatique}
+\nocite{*}
+\putbib[Chapitre_3/magnetostatique]
+\newpage
+\include{Chapitre_3/exercice/magnetostatique}
+\end{bibunit}
+
+\begin{bibunit}
+\graphicspath{{Chapitre_4/figure/}}
+\include{Chapitre_4/cours/aimant}
+\nocite{*}
+\putbib[Chapitre_4/aimant]
+\include{Chapitre_4/exercice/aimant}
+\end{bibunit}
+
+\begin{bibunit}
+\graphicspath{{Chapitre_5/figure/}}
+\include{Chapitre_5/cours/maxwell}
+\nocite{*}
+\putbib[Chapitre_5/maxwell]
+\newpage
+\include{Chapitre_5/exercice/maxwell}
+\end{bibunit}
+\end{document}
