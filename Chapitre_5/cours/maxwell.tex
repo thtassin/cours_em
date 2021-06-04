@@ -1,6 +1,6 @@
 \chapter{Électromagnétisme en régime variable}
 \label{chap:maxwell}
-\section*{Objectifs}%
+\section*{Objectifs}
 \label{sec:maxwell_objectifs}
 
 \begin{itemize}
@@ -18,7 +18,7 @@
 	  électromagnétique par la présence d'un conducteur
 \end{itemize}
 
-\section*{Introduction}%
+\section*{Introduction}
 
 \section{Les limites des équations en régime permanent}
 Malheureusement la forme des équations de Maxwell en régime permanent n'est pas
@@ -97,7 +97,7 @@ On peut alors déterminer l'expression de $\div \vecj$
 	\div \vecj = \dfrac{1}{\mu_0} \div(\rot \vecb) = 0
 \end{equation*}
 car $\div(\rot \vecb) = 0$. Or cette égalité n'est vérifiée qu'en régime permanent 
-\left(\dd{\rho}{t} = 0 \right)!
+$\left(\dd{\rho}{t} = 0 \right)$!
 
 Maxwell proposa en 1864 d'ajouter à l'équation~\ref{eq:magneto_ma} un nouveau terme 
 $\vecj_D$ qu'il nomme \textbf{courant de déplacement}
@@ -229,50 +229,6 @@ Le principe de superposition est donc toujours vérifié en régime variable.
 	aussi.
 \end{exemple}
 
-%\section{Propriétés de symétrie des champs électrique et magnétique}
-%Nous avons dans les chapitres précédents l'importance d'étudier les symétries
-%des champs électrostatique et magnétostatique dans la résolution de problème. 
-%Malheureusement, cette étude devient beaucoup plus compliquée en régime variable.
-%En effet, les équations de Maxwell-Ampère et Maxwell-Faraday montrent qu'un 
-%champ électrique peut produire un champ magnétique et inversement. Ces nouvelles
-%sources doivent alors être prises en compte pour appliquer le principe de Curie.
-%
-%Commençons par le champ magnétique. L'équation de Maxwell-Ampère montre que 
-%la densité de courant $\vecj$ et les variations temporelles du champ 
-%électrique $\vece$ jouent des rôles analogues.
-%
-%\begin{defn}[Propriétés de symétries du champ magnétique]
-%	Soit $M$ un point quelconque de l'espace.
-%	\begin{itemize}
-%		\item Si $M$ appartient à un plan de symétrie de la distribution
-%		  de courants et de la dérivée temporelle du champ électrique
-%		  $\dd{\vece}{t}$, alors $\vecb(M, t)$ est orthogonal à ce plan
-%		  à l'instant $t$.
-%		\item Si $M$ appartient à un plan de d'antisymétrie de la distribution
-%		  de courants et de la dérivée temporelle du champ électrique
-%		  $\dd{\vece}{t}$, alors $\vecb(M, t)$ appartient à ce plan
-%		  à l'instant $t$.
-%	\end{itemize}
-%\end{defn}
-%
-%Pour le champ électrique, l'étude des symétries devient très difficile. En effet,
-%les deux sources n'apparaissent pas dans la même équation. Nous ne nous concentrerons
-%alors que sur le cas d'un milieu vide de charge.
-%
-%\begin{defn}[Propriétés de symétries du champ électrique]
-%	Soit $M$ un point quelconque de l'espace.
-%	\begin{itemize}
-%		\item Si $M$ appartient à un plan de symétrie
-%		  de la dérivée temporelle du champ magnétique
-%		  $\dd{\vecb}{t}$, alors $\vece(M, t)$ est orthogonal à ce plan
-%		  à l'instant $t$.
-%		\item Si $M$ appartient à un plan de d'antisymétrie 
-%		  de la dérivée temporelle du champ magnétique
-%		  $\dd{\vecb}{t}$, alors $\vece(M, t)$ appartient à ce plan
-%		  à l'instant $t$.
-%	\end{itemize}
-%\end{defn}
-
 \section{Énergie électromagnétique}
 Comme un système matériel, le champ électromagnétique est caractérisé par une énergie.
 On constate d'ailleurs en électrocinétique que les condensateurs et les bobines sont
@@ -292,7 +248,7 @@ immobile dans le référentiel d'étude supposé galiléen
 	Ce volume contient des sources internes (en rouge) de densité volumique
 	de puissance $\gamma$. L'énergie qui traverse la surface $\mathcal{S}$
 	(en vert) est caractérisée par une densité surfacique de flux par unité 
-	de temps $\mathbf{\Pi}$.}%
+	de temps $\mathbf{\Pi}$.}
 	\label{fig:bilan_energie}
 \end{figure}
 Comme
@@ -365,7 +321,7 @@ Finalement, on aboutit à
 		\dd{w}{t}(M, t) = -\div \vec{\Pi}(M, t) + \gamma(M, t),
 	\end{equation}
 	où $w$ est la densité volumique d'énergie 
-	mesurée en $\joule \usk \meter \rpcubic$.
+	mesurée en $\joule \usk \rpcubic \meter$.
 \end{defn}
 
 Le but est maintenant d'obtenir une formule similaire pour le champ électromagnétique
@@ -459,8 +415,8 @@ Les évolution spatiale et temporelle de ces deux champs sont contrôlées par l
 de Maxwell dans le vide
 
 \begin{equation*}
-\div \vece &=& 0,\quad \rot \vecb &=& \mu_0 \epsilon_0 \dd{\vece}{t},\quad
-\rot \vece &=& -\dd{\vecb}{t} \quad \mathrm{et} \quad \div \vecb &=& 0.
+\div \vece = 0,\quad \rot \vecb = \mu_0 \epsilon_0 \dd{\vece}{t},\quad
+\rot \vece = -\dd{\vecb}{t} \quad \mathrm{et} \quad \div \vecb = 0.
 \end{equation*}
 
 Nous allons essayer en combinant ces équations d'obtenir une équation combinant
@@ -777,7 +733,7 @@ où $c$ est la vitesse de la lumière dans le vide.
 \subsubsection{Structure d'une onde électromagnétique plane progressive harmonique}
 Lorsque les variations temporelles et spatiales de chaque composante des 
 champs électrique $\vece$ et magnétique $\vecb$ sont décrites par une OPPH de
-vecteur d'onde $\veck$ et de pulsation temporelle $\omega$, ils vérifient les 
+vecteur d'onde $\vec{k}$ et de pulsation temporelle $\omega$, ils vérifient les 
 équations de Maxwell en notation complexe décrites plus haut. Quelles informations
 ces équations nous donnent-elles sur la structure de l'onde électromagnétique ?
 

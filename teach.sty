@@ -36,6 +36,14 @@
 \fi
 
 % ---------------------------------------------
+% New length
+% ---------------------------------------------
+\newlength\arrayvertrulewidth
+\setlength{\arrayvertrulewidth}{2pt}
+\newlength\arrayhspace
+\setlength{\arrayhspace}{5pt}
+
+% ---------------------------------------------
 % New list
 % ---------------------------------------------
 \RequirePackage{enumitem}
@@ -753,19 +761,8 @@
 
 % Memento % modification au 2019/08/14
 
-\newenvironmentx{memento}[2][1={},2={0 0 0 0}]
+\newenvironment{memento}
 {
-\if@euclide
-\def\colortmppicto{0.75 1 0 1 0.25 1}
-\fi
-\ifx\hfuzz#2\hfuzz
-\def\colortmppicto{#2}
-\fi
-\ifx\hfuzz#1\hfuzz
-\renewcommand\teach@title{\teach@title@memento}
-\else
-\renewcommand\teach@title{\teach@title@memento~(#1)}
-\fi
 \begin{lrbox}{\teach@box}
 \begin{minipage}{\dimexpr\linewidth-3\tabcolsep-0.2pt}
 \color{\teach@thm@body@txtcolor}
@@ -784,22 +781,11 @@
 
 % Attention % modification au 2019/08/14
 
-\newenvironmentx{attention}[2][1={},2={0 0 0 0}]
+\newenvironment{attention}
 {%
-\if@euclide
-\def\colortmppicto{1 0 0 0}
-\fi
-\ifx\hfuzz#2\hfuzz
-\def\colortmppicto{#2}
-\fi
-\ifx\hfuzz#1\hfuzz
-\renewcommand\teach@title{\teach@title@attention}
-\else
-\renewcommand\teach@title{\teach@title@attention~(#1)}
-\fi
 \begin{lrbox}{\teach@box}
 \begin{minipage}{\dimexpr\linewidth-3\tabcolsep-0.2pt}
-\color{\teach@thm@body@txtcolor}
+\color{\teach@attention@title@txtcolor}
 }
 {
 \end{minipage}
