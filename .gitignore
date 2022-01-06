@@ -1,0 +1,14 @@
+*.aux
+*.mtc*
+*.log
+*.swp
+*.bbl
+*.blg
+*.toc
+*.out
+*.maf
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+

@@ -1,0 +1,139 @@
+\section{Corrigé}
+\begin{corrige}
+\begin{enumerate}
+	\item À la surface, le champ magnétique terrestre est de l'ordre de
+	  $\unit{50}{\micro \tesla}$. Le rayon de la Terre vaut approximativement
+	  $\unit{6400}{\kilo \meter}$. On a donc
+	  
+	  \begin{equation*}
+		  \boxed{ m = \dfrac{4 \pi B R_T^3}{\mu_0} \approx \unit{10^{23}}{\ampere
+		  \usk \meter \squared}.} 
+	  \end{equation*}
+
+	 \item On fait ici l'hypothèse que tous les moments magnétiques atomiques
+	   sont alignés et orientés dans le même sens. On a alors
+	   \begin{equation*}
+		   m = N\mu_B \iff \boxed{N = \dfrac{m}{\mu_B} = 10^{46}.}
+	   \end{equation*}
+
+	 \item Le noyau contient $N$ atomes. Pour obtenir le nombre de mole 
+	   $n$ que cela représente, il suffit de diviser $N$ par le nombre d'
+	   Avogadro $\mathcal{N}_A = \unit{6.022 \times 10^{23}}{\rp \mole}$.
+	   On a alors $n = N/\mathcal{N}_A$. On peut alors remonter à la masse 
+	   $m_N$ du noyau en utilisant sa masse molaire $m_N = nM$. Finalement,
+	   le volume s'écrit
+	   \begin{equation*}
+		   V = \dfrac{m_N}{\rho} = \boxed{\dfrac{mM}{\mu_B \mathcal{N}_A \rho}
+	   \approx \unit{1.2 \times 10^{17}}{\cubic \meter}.}
+	   \end{equation*}
+
+   \item On considère que le noyau de la Terre est sphérique. Son rayon $R_N$ 
+     s'écrit donc
+     \begin{equation*}
+	     R_N = \left(\dfrac{3V}{4\pi}\right)^{1/3} \approx 
+	     \boxed{\unit{300}{\kilo \meter}.}
+     \end{equation*}
+     En réalité le noyau interne a un rayon de $\unit{1200}{\kilo \meter}$. Nous 
+     avons donc sous-estimé ce dernier. En effet, notre principal erreur a été 
+     de considérer que les moments magnétiques atomiques étaient alignés
+     alors que la température dans le noyau est très élevée !
+  \item La température du noyau est supérieur à la température du fer qui est alors
+    paramagnétique. Il n'y a donc aucune raison que les moments dipolaires atomiques
+    produisent un champ macroscopique. Le champ magnétique produit par la
+    Terre résulte de phénomènes d'induction.
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+	\begin{enumerate}
+		\item Initialement, l'aiguille de la boussole ne ressent que le
+		  champ magnétique terrestre. Elle est donc alignée avec ce dernier
+		  (plus exactement avec la composante horizontale de ce dernier).
+		  En revanche, lorsque les bobines de Helmholtz sont alimentées,
+		  elles vont à leur tour générer un champ magnétique, 
+		  non aligné avec l'aiguille, qui va induire 
+		  un couple sur cette dernière et donc la faire tourner.
+		\item La boussole est à l'équilibre lorsque les couples induits
+		  par les deux champs magnétiques s'annulent. Cette annulation
+		  est atteinte lorsque \fbox{$B_h \sin \phi = B_0 \cos \phi$}, où
+		  $B_0$ est le champ magnétique généré par les bobines de Helmholtz
+		  et ressenti par la boussole. On a alors
+		  \begin{equation*}
+			  \boxed{\tan \phi = \dfrac{\mu_0 I}{2 R B_h}.}
+		  \end{equation*}
+	  \item L'application numérique donne \fbox{
+	    $B_h = \unit{23.5}{\micro \tesla}$.}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item Le cristal se trouvant dans un champ uniforme $\vecb$, l'énergie magnétique
+  d'un moment magnétique $m_+$ est donné par 
+  \begin{equation*}
+	  \boxed{E_+ = -\vecm_+ \cdot \vecb = -\mu_B B.}
+  \end{equation*}
+
+  \item $Z$ est \fbox{sans dimension}. $k_B T$ est homogène à une énergie donc $k_B$
+    s'exprime en $\joule \usk \rp \kelvin$ et donc en \fbox{$\kilogram \usk \meter
+    \squared \usk \second \rpsquare \usk \rp \kelvin$}.
+  \item D'après la première question, on a \fbox{$E_+ = - \mu_B B$ et $E_- = 
+    \mu_B B$.}
+    Pour déterminer l'expression de $Z$, il faut écrire que 
+    \begin{equation*}
+	    N = N_+ + N_- \iff \boxed{Z = \dfrac{1}{N}\left[
+		    \exp\left(\dfrac{\mu_B B}{k_B T}\right) + 
+    \exp\left(\dfrac{-\mu_B B}{k_B T}\right) \right].}
+    \end{equation*}
+    Cette expression permet d'aboutir à  
+    \begin{equation*}
+	    \boxed{N_\pm = \dfrac{N}{\exp\left(\dfrac{\mu_B B}{k_B T}\right) + 
+		    \exp\left(\dfrac{-\mu_B B}{k_B T}\right)} 
+	    \exp\left(\dfrac{\pm \mu_0 B}{k_BT}\right).}
+    \end{equation*}
+
+    Par définition, le moment magnétique de l'échantillon est obtenu en sommant
+    tous les moments magnétiques atomiques
+    \begin{equation*}
+	    M = N_+ \mu_B - N_- \mu_B = N \mu_B
+		    \dfrac{\exp\left(\dfrac{\mu_B B}{k_B T}\right) - 
+		    \exp\left(\dfrac{-\mu_B B}{k_B T}\right)}
+		    {\exp\left(\dfrac{\mu_B B}{k_B T}\right) + 
+		    \exp\left(\dfrac{-\mu_B B}{k_B T}\right)}
+	      = \boxed{N \mu_B \tanh\left(\dfrac{\mu_B B_0}{k_B T}\right).}
+    \end{equation*}
+
+    \item L'énergie magnétique d'un moment magnétique est négligeable dès lors que 
+      \begin{equation*}
+	      \mu_B B_0 \ll k_B T \iff \boxed{B \ll \dfrac{k_B T}{mu_B}.}
+      \end{equation*}
+      À temperature ambiante, $T = \unit{300}{\kelvin}$, l'application numérique
+      donne $B = \unit{450}{\tesla}$. Cette intensité de champ est impossible à obtenir
+      expérimentalement. On peut donc raisonnablement \fbox{négliger l'énergie magnétique
+      devant l'énergie thermique.}
+      \item L'aimantation du cristal s'obtient en écrivant
+      \begin{equation*}
+	      M_c = \dfrac{M}{V} = \dfrac{N \mu_B}{V} 
+	      \tanh\left(\dfrac{\mu_B B_0}{k_B T}\right).
+      \end{equation*}
+      Au premier ordre, l'aimantation du cristal vaut
+      \begin{equation*}
+	      \boxed{M_c = \dfrac{N \mu_B^2 B_0}{k_B T V}.}
+      \end{equation*}
+      Dans un paramagnétique, la susceptibilité étant très faible devant $1$, 
+      on a $B_0 = \mu_0 H_0$ où $H_0$ est l'amplitude du vecteur excitation magnétique.
+      La susceptibilité $\chi$ s'écrit donc
+      \begin{equation*}
+	      \boxed{\chi = M_c/H_0 = \dfrac{N \mu_0 \mu_B^2}{V k_B T}.}
+      \end{equation*}
+       On retrouve bien la loi de Curie avec \fbox{$C = \dfrac{N \mu_0 \mu_B^2}
+	{V k_B}$.}
+
+      \item La susceptibilité 
+      d'un cristal composé d'une mole de moments atomiques s'écrit
+      \begin{equation*}
+	      \chi = \dfrac{\mathcal{N} \mu_0 \mu_B^2 \rho}{\mathcal{M} k_B T}.
+      \end{equation*}
+      L'application numérique donne \fbox{$\chi = 7.51 \times 10^{-4}$.}
+\end{enumerate}
+\end{corrige}
