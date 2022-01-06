@@ -517,6 +517,28 @@
 \vspace{1em}
 }
 
+\newenvironment{rema}[1][]
+{%
+\ifx\hfuzz#1\hfuzz
+\renewcommand\teach@title{\teach@title@rem.}
+\else
+\renewcommand\teach@title{\teach@title@rem~(#1).}
+\fi
+\vspace{1em}
+
+\begin{tabular}{@{\color{\teach@rem@title@txtcolor}\vrule width \arrayvertrulewidth\hspace*{\arrayhspace}}l@{}}
+\begin{minipage}{\dimexpr\linewidth-\arrayhspace-\arrayvertrulewidth}
+\color{\teach@rem@body@txtcolor}
+\bgroup
+\fontfamily{lmss}\bfseries\selectfont 
+\textcolor{\teach@rem@title@txtcolor}{\teach@title}
+\egroup~
+}
+{
+\end{minipage}
+\end{tabular}
+\vspace{1em}
+}
 
 % Attention % modification au 2019/08/14
 
