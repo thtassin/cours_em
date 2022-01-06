@@ -1,0 +1,250 @@
+% % % % % % % % % % % % % % % % % % % %% % % % % % % % % %% % % % % % % % % %
+% Fiche méthode adimensionnement 
+% Version: 15 juillet 2021
+% % % % % % % % % % % % % % % % % % % %% % % % % % % % % %% % % % % % % % % %
+\documentclass[12pt]{book}
+\usepackage{teach}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{framed}
+\usepackage{enumitem}
+\usepackage{palatino}
+\usepackage{natbib}
+\usepackage[sectionbib]{bibunits}
+\usepackage{pxfonts}
+\usepackage{hyperref}
+\usepackage[squaren,Gray,cdot]{SIunits}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+
+\hypersetup{
+	colorlinks=True,
+	urlcolor=\colorlink,
+	linkcolor=\colorlink,
+	citecolor=\colorlink
+           }
+\newcommand{\todo}[1]{{\color{red} [TODO: #1]}}
+\renewcommand{\FrenchLabelItem}{\textbullet}
+% ----------------------------------------------------------------------------
+% Notations
+% ----------------------------------------------------------------------------
+\newcommand{\mitbf}[1]{\hbox{\mathversion{bold}$#1$}}
+\renewcommand{\phi}{\varphi}
+
+%Constante
+\newcommand{\pieps}{\dfrac{1}{4\pi\epsilon_0}}
+
+%Vecteurs
+\newcommand{\vece}{\mitbf{E}}
+\newcommand{\vecg}{\mitbf{g}}
+\newcommand{\vecn}{\mitbf{n}}
+\newcommand{\vecd}{\mathrm{\textbf{d}}}
+\newcommand{\vecm}{\mitbf{m}}
+\newcommand{\vecM}{\mitbf{M}}
+\newcommand{\vecs}{\mitbf{S}}
+\newcommand{\veca}{\mitbf{A}}
+\newcommand{\vecH}{\mitbf{H}}
+\newcommand{\vecb}{\mitbf{B}}
+\newcommand{\vecf}{\mitbf{F}}
+\newcommand{\vecj}{\mitbf{j}}
+\newcommand{\vecv}{\mitbf{v}}
+\newcommand{\er}{\mitbf{e_r}}
+\newcommand{\etheta}{\mitbf{e_\theta}}
+\newcommand{\ephi}{\mitbf{e_\phi}}
+\newcommand{\ex}{\mitbf{e_x}}
+\newcommand{\ey}{\mitbf{e_y}}
+\newcommand{\ez}{\mitbf{e_z}}
+\newcommand{\ds}{\mathrm{d}\mitbf{S}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\complex}[1]{\underline{#1}}
+
+%Derivative
+\newcommand{\grad}{\mitbf{\nabla}}
+\newcommand{\laplacien}{\grad^2}
+\newcommand{\dV}{\mathrm{d}V}
+\newcommand{\dtheta}{\mathrm{d}\theta}
+\newcommand{\dphi}{\mathrm{d}\varphi}
+\newcommand{\dr}{\mathrm{d}r}
+\newcommand{\dt}{\mathrm{d}t}
+\newcommand{\dx}{\mathrm{d}x}
+\newcommand{\dy}{\mathrm{d}y}
+\newcommand{\dz}{\mathrm{d}z}
+\newcommand{\dl}{\mathrm{\textbf{d}}\mitbf{\ell}}
+\renewcommand{\div}{\mathrm{div}\,}
+\newcommand{\rot}{\mathrm{\textbf{rot}}\,}
+\newcommand{\gradient}{\mathrm{\textbf{grad}}\,}
+\newcommand{\ddtheta}{\partial \theta}
+\newcommand{\ddphi}{\partial \varphi}
+\newcommand{\ddr}{\partial r}
+\newcommand{\ddx}{\partial x}
+\newcommand{\dd}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\dn}[2]{\dfrac{\mathrm{d} #1}{\mathrm{d} #2}}
+
+% ----------------------------------------------------------------------------
+% Documents
+% ----------------------------------------------------------------------------
+\begin{document}
+\def\author{Théo Tassin}
+\def\title{L2 STEP - Électromagnétisme}
+\parskip 10pt plus2pt minus2pt
+\chapter*{Analyse dimensionnelle}
+\section*{Objectifs}
+\begin{itemize}
+	\item Déterminer la dimension d'une grandeur
+	\item Vérifier l'homogénéité d'une expression
+\end{itemize}
+
+\begin{defn}[Analyse dimensionnelle]
+	\begin{itemize}
+		\item L'analyse dimensionnelle est une méthode 
+		  pratique permettant de 
+		  vérifier \emph{l'homogénéité} d'une formule physique en décomposant les 
+		  grandeurs physiques qu'elle met en jeu en un produit de grandeurs 
+		  de base : le système d'unité international 
+		  (d'après \textit{Wikipédia}).
+		 \item Deux grandeurs sont homogènes si elles s'expriment dans les
+		   mêmes unités.
+	\end{itemize}
+\end{defn}
+
+\section{Le système d'unité international et les unitées dérivées}
+Le système international est le système d'unités le plus couramment utilisé dans 
+le monde. Il comporte 7 unités de base résumées dans le Tableau~\ref{usi}.
+
+\begin{table}[ht!]
+	\centering
+	\caption{Unités de base du système international (SI)}
+	\begin{tabular}{lll}
+	\textbf{Grandeur} & \textbf{Unités} & \textbf{Symbole} \\ \hline
+	Masse & kilogramme & $\kilogram$ \\ 
+	temps & seconde & $\second$ \\
+	distance & mètre & $\meter$ \\
+	température & kelvin & $\kelvin$ \\
+	intensité électrique & ampère & $\ampere$ \\
+	quantité de matière & mole & $\mole$ \\
+	intensité lumineuse & candela & $\candela$
+	\end{tabular}
+	\label{usi}
+\end{table}
+
+De ces unités de base, on peut dériver d'autres unités. On peut ainsi former une
+infinité d'unités dérivées. Le Tableau~\ref{usi_deriv} fournit quelques exemples.
+
+\begin{table}[ht!]
+	\centering
+	\caption{Unités dérivées du système international}
+	\begin{tabular}{lll}
+		\textbf{Grandeur} & \textbf{Unité dérivée} & \textbf{Décomposition}\\ \hline
+		Énergie & joule $\joule$ & $\kilogram \usk \meter \squared \usk \second \rpsquared$\\
+		Vitesse &  $\meter \usk \rp \second$ & $\meter \usk \rp \second$\\
+		Champ magnétique & tesla $\tesla$ & $\kilogram \usk \rp \ampere \usk \second \rpsquared$ \\ 
+		Force & newton $\newton$  & $\kilogram \usk \meter \usk \second \rpsquared$ \\
+		Charge & coulomb $\coulomb$ &  $\ampere \usk \second$
+	\end{tabular}
+	\label{usi_deriv}
+\end{table}
+
+\begin{defn}[Unité dérivée]
+Une \emph{unité dérivée} est une unité qui combine plusieurs unités fondamentales
+(sous la forme d'un produit de puissances de plusieurs de ces unités de base).
+Ces unités dérivées ont parfois leur propre nom et symbole comme le newton
+$\newton$. Toute unité dérivée s'exprime en fonction des unités de base du système 
+international. (d'après \textit{Wikipédia})
+
+\end{defn}
+
+
+\section{Vérifier l'homogénéité d'une expression}
+Pourquoi s'embêter à vérifier l'homogénéité d'une expression~?
+La réponse est simple : cela permet \emph{d'éviter des erreurs grossières~!} En effet,
+si j'aboutis à l'expression $a = b$, $a$ doit avoir la même dimension que $b$. 
+Si ce n'est pas le cas, je sais qu'il faut revoir mes calculs et/ou mon raisonnement.
+En plus d'éviter des erreurs, la dimension d'un objet physique 
+peut permettre de mieux comprendre à quoi il correspond (voir le TD sur le
+potentiel de Yukawa). 
+
+\begin{attention}
+	L'homogénéité d'une expression n'assure pas sa validité~!
+\end{attention}
+
+La vérification de l'homogénéité d'une expression peut être compliquée par la présence de certaines opérations,
+telle que la dérivation, ou par la présence d'unités dérivés. Nous allons maintenant voir comment surmonter 
+ces difficultés.
+\subsection{Multiplication, dérivation et intégration}
+Quelques règles simples à retenir
+
+\begin{enumerate}
+	\item Si on multiplie deux grandeurs, l'unité du résultat est 
+	  la multiplication des unités des grandeurs de départ. Par exemple,
+	  une surface est homogène à une distance au carré car elle correspond
+	  au produit d'une distance par une distance.
+	\item Dériver une grandeur par une autre revient, en terme de dimension,
+	  à diviser l'unité de la première par l'unité de la deuxième. Une vitesse
+	  est obtenue en dérivant une distance et est donc homogène à une distance
+	  divisée par un temps. Pensez à la notation 
+	  $\dfrac{\mathrm{d}x}{\mathrm{d}t}$ pour vous en souvenir : dériver
+	  $x$ revient grossièrement à diviser une petite variation de $x$
+	  par une petite variation de $t$.
+	\item Inversement, lorsqu'on intègre une grandeur par rapport à une autre, cela
+	  revient à multiplier l'unité de la première par l'unité de la deuxième.
+	  Une pression intégrée sur une surface est donc homogène à une force.
+\end{enumerate}
+
+\begin{attention}
+\begin{itemize}
+	\item Le gradient, la divergence et le rotationnel correspondent à des 
+	opérations de dérivation.
+	\item On ne peux pas additionner deux grandeurs de dimensions 
+	  différentes~!
+\end{itemize}
+\end{attention}
+\subsection{Les unitées dérivées}
+Les unités dérivées qui possèdent leur propre nom peuvent poser problème car 
+on a tendance à oublier leur décomposition en unités SI.
+Comment s'en sortir dans ce cas~? Les deux exemples
+suivants illustrent chacun une manière de s’en sortir dans certaines
+situations. 
+
+\subsubsection{Trouver une expression simple de cette unité dérivée}
+Imaginons que j'ai oublié comment les joules se décomposent dans le système international.
+Il suffit alors de me rappeler que l'énergie cinétique est une énergie et s'exprime
+comme le produit d'une masse par une vitesse au carré. J'en conclus que 
+$\joule = \kilogram \usk \meter \squared \usk \second \rpsquared$. Cette méthode 
+peut s'appliquer à d'autres exemples
+\begin{itemize}
+	\item Joule : énergie cinétique (produit d'une masse par une vitesse au carré)
+	\item Newton : poids (produit d'une masse par une accélération)
+	\item Pascal : pression hydrostatique (produit d'une masse volumique par une accélération et par une distance)
+\end{itemize}
+
+\subsubsection{Se ramener à une expression connue}
+Un fil rectiligne infini uniformément chargé avec une densité linéïque de charge
+$\lambda$ ($\coulomb \usk \rp \meter$) créé en un point $M$ de l'espace
+situé à un point $r$ du fil, un champ électrique $E$
+
+\begin{equation*}
+	E = \dfrac{\lambda}{4 \pi \epsilon_0 r},
+\end{equation*}
+où $\epsilon_0$ est la permittivité diélectrique du vide en 
+$\farad \usk \rp \meter$. Comment vérifier l'homogénéité de cette expression
+lorsqu'on a oublié la décomposition des Farad en unité SI~? On essaye de se 
+ramener à une expression connue du champ électrique, celui généré par une charge 
+$Q$
+
+\begin{equation*}
+	E_Q = \dfrac{Q}{4 \pi \epsilon_0 r^2}.
+\end{equation*}
+D'après cette formule, un champ électrique est homogène à une charge divisée 
+par $\epsilon_0$ et une distance au carré. Pour essayer de retrouver une expression
+semblable, on multiplie le numérateur et le dénominateur de $E$ par $r$
+
+\begin{equation*}
+	E = \dfrac{\lambda r}{4 \pi \epsilon_0 r^2}.
+\end{equation*}
+$\lambda r$ étant homogène à une charge, on conclut que cette expression est 
+bien homogène.
+
+\end{document}
