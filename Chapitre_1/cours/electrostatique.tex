@@ -4,16 +4,17 @@
 \label{sec:objectifs}
 \begin{itemize}
 	\item Connaître les équations qui gouvernent l'évolution spatiale 
-	  du champ électrostatique
-	\item Faire le lien entre ces équations et une carte de champ 
+	  du champ électrostatique 
+	\item Comprendre le lien entre ces équations et une carte de champ 
 	  électrique
+	\item Déterminer les symétries et invariances d'une distribution de charge
 	\item Savoir calculer le champ électrostatique résultant d'une 
 	  distribution de charges simple
 \end{itemize}
 \section*{Introduction}%
 \label{sec:introduction}
 Les phénomènes électrostatiques sont connus depuis l'Antiquité.
-Les Grecs avaient déjà observé que l'ambre (\emph{electron} en grec)
+Les Grecs avaient déjà observé que l'ambre (electron en grec)
 frottée pouvait attirer des objets
 légers comme les copeaux de bois.
 Néanmoins, l'étude de ces phénomènes est longtemps restée qualitative.
@@ -22,7 +23,7 @@ expérimentaux apparaissent.
 Ce premier chapitre s'intéresse à l'étude du champ électrique 
 en régime permanent, c'est à dire généré par des charges immobiles dans le 
 référentiel d'étude. Les phénomènes décrits dans ce chapitre sont 
-donc \textbf{indépendants du temps}.
+donc indépendants du temps.
 
 \begin{defn}[Régime permanent]
 	On dit qu'un système fonctionne en régime permanent lorsque toutes les
@@ -45,7 +46,7 @@ De cette expérience découlent plusieurs observations:
 	\item L'intensité entre les forces est proportionnelle à l'inverse 
 	  du carré de la distance qui les sépare.
 \end{enumerate}
-Ces observations expérimentales se résument dans \textbf{la loi de Coulomb}. 
+Ces observations expérimentales se résument dans \emph{la loi de Coulomb}. 
 
 
 \begin{defn}[Loi de Coulomb]
@@ -269,7 +270,7 @@ où $\dfrac{\rho(M) \mathrm{d}\tau_M}{||MP||^2}\mitbf{e}_{MP}$ est le champ
 \begin{exemple}
 	On considère un noyau d'uranium $238$ de rayon $R = \unit{1}{\femto \meter}$.
 	Il contient $92$ protons portant une charge $e$ et $146$ neutrons sans charge.
-	On considère que la charge totale $Q$ du noyau est \textbf{uniformément répartie}
+	On considère que la charge totale $Q$ du noyau est uniformément répartie
 	dans le volume du noyau. La densité volumique de charge $\rho$ dans 
 	le noyau d'uranium est donc donnée par
 
@@ -282,7 +283,7 @@ où $\dfrac{\rho(M) \mathrm{d}\tau_M}{||MP||^2}\mitbf{e}_{MP}$ est le champ
 \subsection{Densité surfacique de charge}
 	On considère une charge $Q$ répartie sur une surface $\mathcal{S}$
 	(voir Fig.~\ref{fig:distributions}b). 
-	On définit \textbf{
+	On définit \emph{
 	la densité surfacique de charge} $\sigma$ 
 	telle que pour tout point $M$ de la surface,
 	la charge $\mathrm{d}q$ contenue sur une petite surface $\mathrm{d}S_M$ centrée 
@@ -310,7 +311,7 @@ où $\dfrac{\sigma(M) \mathrm{d}S_M}{||MP||^2}\mitbf{e}_{MP}$ est le champ
 	qui le constituent. Une des plaques est alors chargée positivement
 	avec la charge $Q = CU = \unit{10^{-8}}{\coulomb}$ 
 	tandis que l'autre est chargée négativement avec la 
-	charge $-Q$. Si on considère que la charge est \textbf{uniformément répartie}
+	charge $-Q$. Si on considère que la charge est uniformément répartie
 	sur ces plaques, la densité surfacique de charge de la plaque positive
 	est donnée par
 
@@ -322,7 +323,7 @@ où $\dfrac{\sigma(M) \mathrm{d}S_M}{||MP||^2}\mitbf{e}_{MP}$ est le champ
 \subsection{Densité linéïque de charge}
 	On considère une charge $Q$ répartie sur un fil $\mathcal{L}$
 	(voir Fig.~\ref{fig:distributions}c). 
-	On définit \textbf{
+	On définit \emph{
 	la densité linéïque de charge} $\lambda$ 
 	telle que pour tout point $M$ du fil,
 	la charge $\mathrm{d}q$ contenue sur une petite portion $\mathrm{d}\ell_M$ centrée 
@@ -402,7 +403,7 @@ cherchons dans un premier temps à déterminer ``la quantité'' de champ électr
 $E$ qui traverse une
 sphère $\mathcal{S}$ de rayon $r$ centrée en $O$ à laquelle $M$ 
 appartient (voir Fig.~\ref{fig:gauss}b). 
-La surface $\mathcal{S}$ est ici une surface \textbf{fermée}.
+La surface $\mathcal{S}$ est ici une surface \emph{fermée}.
 
 \begin{defn}[Surface fermée]
 	Une surface est dite fermée si elle délimite un volume intérieur 
@@ -448,11 +449,11 @@ $\mathcal{S}$, on introduit la notion de flux. On retrouve cette notion en géog
 \begin{defn}[Flux d'un champ de vecteurs]
 	Soit $M$ un point d'un surface fermée en lequel règne un champ $\vece(M)$.
 	Soit $\mathrm{d}\mathbf{S}$ le vecteur surface élémentaire sortant associé
-	à l'élément de surface centré en $M$. \textbf{Le flux sortant élémentaire} du 
+	à l'élément de surface centré en $M$. \emph{Le flux sortant élémentaire} du 
 	vecteur $\vece$ à travers $\mathrm{d}S$ est donné par
 	$\vece(M) \cdot \mathrm{d}\mathbf{S}$.
 
-	\textbf{Le flux total sortant} d'un champ de vecteur $\vece$ à travers 
+	\emph{Le flux total sortant} d'un champ de vecteur $\vece$ à travers 
 	une surface fermée
 	$\mathcal{S}$ est simplement la somme sur tous les éléments de la surface de tous
 	les flux élémentaires sortants
@@ -478,7 +479,7 @@ $Q$ est négative.
 On constate alors que le flux du champ électrique à travers la sphère $\mathcal{S}$
 de rayon $r$ ne dépend que de la charge $Q$ qu'elle contient et pas de son rayon.
 Cette propriété que nous venons de montrer pour une charge ponctuelle est en 
-fait une propriété du champ électrique connue sous le nom de \textbf{théorème de 
+fait une propriété du champ électrique connue sous le nom de \emph{théorème de 
 Gauss}.
 
 \begin{defn}[Théorème de Gauss]
@@ -490,11 +491,11 @@ Gauss}.
 		\oiint_\mathcal{S} \vece \cdot \ds = \dfrac{Q}{\epsilon_0}.
 		\label{eq:gauss}
 	\end{equation}
-	La surface $S$ est appelée la \textbf{surface de Gauss}.
+	La surface $S$ est appelée la \emph{surface de Gauss}.
 \end{defn}
 
 Le théorème de Gauss peut-être traduit sous une forme locale, 
-appelée l'\textbf{équation de 
+appelée l'\emph{équation de 
 Maxwell-Gauss}, qui relie alors le champ électrique à la distribution de charge.
 
 \begin{defn}[Équation de Maxwell-Gauss]
@@ -505,8 +506,8 @@ Maxwell-Gauss}, qui relie alors le champ électrique à la distribution de charg
 		\div \vece = \dfrac{\rho}{\epsilon_0}.
 		\label{eq:MG}
 	\end{equation}
-	La divergence de $\vece$ est une grandeur \textbf{scalaire}. 
-	Cette équation est une relation \textbf{locale}, elle permet de relier
+	La divergence de $\vece$ est une grandeur scalaire. 
+	Cette équation est une relation locale, elle permet de relier
 	les dérivées spatiale du champ électrique en un point de l'espace à 
 	la densité volumique de charge en ce même point.
 \end{defn}
@@ -536,14 +537,14 @@ Ce résultat se généralise à un champ électrostatique $\vece$ quelconque sou
 forme de l'équation de Maxwell-Faraday.
 
 \begin{defn}[Équation de Maxwell-Faraday]
-	Un champ électrique $\vece$ en \textbf{régime statique}, c'est-à-dire
+	Un champ électrique $\vece$ en régime statique, c'est-à-dire
 	indépendant du temps, vérifie 
 	\begin{equation}
 		\rot \vece = \mitbf{0}.
 	\end{equation}
-	Le rotationnel de $\vece$ est une grandeur \textbf{vectorielle}. Comme
+	Le rotationnel de $\vece$ est une grandeur vectorielle. Comme
 	l'équation de Maxwell-Gauss, l'équation de Maxwell-Faraday est 
-	une relation \textbf{locale} vérifiée
+	une relation locale vérifiée
 	en tout point de l'espace.
 \end{defn}
 
@@ -570,7 +571,7 @@ orienté $\mathcal{C}$ est nul
 \begin{equation}
 	\oint_\mathcal{C} \vece \cdot \dl = 0.
 \end{equation}
-On dit alors que le champ électrique est à circulation \textbf{conservative}.
+On dit alors que le champ électrique est à circulation conservative.
 \end{defn}
 
 Le champ électrostatique est donc un champ dont le rotationnel est nul en tout 
@@ -581,7 +582,7 @@ tel que $\vece = -\gradient V$.
 
 \begin{defn}[Potentiel électrostatique]
 	Le champ électrostatique étant à rotationnel nul, il existe un 
-	champ scalaire $V$, appelé \textbf{potentiel électrostatique}, tel qu'en
+	champ scalaire $V$, appelé potentiel électrostatique, tel qu'en
 	tout point de l'espace
 
 	\begin{equation}
@@ -608,14 +609,14 @@ Maxwell-Gauss~\ref{eq:MG}, on obtient
 \end{equation*}
 
 \begin{defn}[Équation de Poisson]
-	Le potentiel électrique suit l'\textbf{équation de Poisson}
+	Le potentiel électrique suit l'équation de Poisson
 	\begin{equation}
 		\laplacien V = -\dfrac{\rho}{\epsilon_0}.
 	\end{equation}
 \end{defn}
 
-De plus, la force électrostatique est une \textbf{force conservative}. On peut alors
-définir une \textbf{énergie potentielle} qui lui est associée.
+De plus, la force électrostatique est une force conservative. On peut alors
+définir une \emph{énergie potentielle} qui lui est associée.
 
 \begin{defn}[Énergie potentielle électrostatique]
 	La force électrostatique $\vecf$ est une force conservative, elle 
@@ -667,7 +668,7 @@ définir une \textbf{énergie potentielle} qui lui est associée.
 
 \section{Étude des lignes de champ de \vece}
 Nous nous intéressons dans cette partie aux propriétés spatiales du champ $\vece$.
-Nous allons voir comment les \textbf{lignes de champ} nous renseignent sur sa répartition 
+Nous allons voir comment les \emph{lignes de champ} nous renseignent sur sa répartition 
 dans l'espace.
 
 \begin{defn}[Ligne de champ]
@@ -756,7 +757,7 @@ Les lignes de champ nous permettent de retrouver quelques propriétés du champ
 
 \begin{enumerate}
 	\item On remarque tout d'abord que les lignes de champ sont orientées 
-	  de la \textbf{charge positive vers la charge négative}. Cette première 
+	  de la charge positive vers la charge négative. Cette première 
 	  observation peut être vue comme une conséquence de la relation reliant 
 	  le champ électrique $\vece$ et le potentiel électrostatique $V$ 
 	  (voir Eq.~\ref{eq:potentiel}). En effet, le sens de $\vece$ est 
@@ -833,18 +834,18 @@ sphère est ici uniformément chargée, on observe que
 	\item  si je tourne la sphère d'un angle $\Delta \theta$ dans la
 	  direction $\etheta$, le problème
 	  ne change pas. La distribution de charge est donc invariante 
-	  par rotation selon l'angle $\theta$. $\vece$ \textbf{ne dépend pas de
-	  $\mitbf{\theta}$}.
+	  par rotation selon l'angle $\theta$. $\vece$ ne dépend pas de
+	  $\mitbf{\theta}$.
 
 	  \item  si je tourne la sphère d'un angle $\Delta \varphi$ dans la
 	  direction $\ephi$, le problème
 	  ne change pas. La distribution de charge est donc invariante 
-	  par rotation selon l'angle $\varphi$. $\vece$ \textbf{ne dépend pas de
-	  $\mitbf{\varphi}$}.
+	  par rotation selon l'angle $\varphi$. $\vece$ ne dépend pas de
+	  $\mitbf{\varphi}$.
   	\item si je déplace la sphère d'une distance $\Delta r$ dans la direction
 	$\er$ je remarque que le problème change. Par exemple si $\Delta r$ 
 	est supérieur à $R_1$, le point $O_1$ n'appartient plus à la sphère après
-	la translation. $\vece$ \textbf{dépend de} $\mitbf{r}$.
+	la translation. $\vece$ dépend de $\mitbf{r}$.
 
 \end{itemize}
 
@@ -882,9 +883,9 @@ le point $M$ appartient
 
 \begin{itemize}
 	\item le plan $(M, \er, \etheta)$ est un plan de symétrie de la distribution
-		de charge. $\vece(M)$ \textbf{doit donc appartenir à ce plan}.
+		de charge. $\vece(M)$ doit donc appartenir à ce plan.
         \item le plan $(M, \er, \ephi)$ est un plan de symétrie de la distribution de 
-		charge. $\vece(M)$ \textbf{doit donc appartenir à ce plan}.
+		charge. $\vece(M)$ doit donc appartenir à ce plan.
 \end{itemize}
 
 $\vece(M)$ doit appartenir au plan $(M, \er, \etheta)$ et au plan $(M, \er, \ephi)$.
