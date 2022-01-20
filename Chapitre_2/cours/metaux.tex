@@ -3,12 +3,23 @@
 \section*{Objectifs}
 \begin{itemize}
 	\item Comprendre comment on peut modéliser la réponse 
-	  un matériau au travers d'une relation constitutive
+		d'un matériau au travers d'une \emph{relation constitutive}
 	\item Connaître la notion de résistivité
 	\item Connaître la loi d'Ohm locale
 	\item Comprendre comment on peut sonder le sol grâce à la résistivité
 \end{itemize}
 
+\begin{defn}[Relation constitutive]
+	Une \emph{relation constitutive} est une relation entre deux grandeurs
+	physiques qui modélise la réponse d'un matériau à un stimuli extérieur.
+	Elle est donc spécifique au matériau considéré.
+\end{defn}
+
+\begin{exemple}
+	La loi de Darcy permet de déterminer le flux d'un liquide à travers 
+	un milieu poreux. Elle ne doit en aucun cas être appliquée à un matériau
+	non poreux~!
+\end{exemple}
 \section*{Introduction}
 \begin{figure}[]
 	\centering
@@ -24,18 +35,19 @@ Les conducteurs contiennent des \emph{électrons libres}, c'est-à-dire libres d
 mouvoir. Ces derniers, soumis à l'agitation thermique, sont animés d'un mouvement
 erratique (voir Fig.~\ref{fig:e_libre}). 
 Pour générer un courant, il est nécessaire
-d'exercer une force sur ces derniers, de manière à créer un mouvement d'ensemble.
+d'exercer une force sur ces derniers, de manière à créer un \emph{mouvement d'ensemble}.
 Dans un circuit électrique par exemple, on impose une différence de potentiel 
 entre ses bornes. Les conducteurs solides, tels que le cuivre, contiennent
-un nombre important d'atomes, l'étude du mouvement d'un électron devient alors 
+un nombre important d'atomes, l'étude du mouvement d'un électron, intéragissant
+avec chaque atome par interaction coulombienne, devient alors 
 difficile.
-Dans ce chapitre, nous allons voir comment modéliser le comportement d'un conducteur 
-soumis à un champ électrique.
+Dans ce chapitre, nous allons voir comment modéliser le comportement macroscopique 
+d'un conducteur soumis à un champ électrique.
 \section{Quelques rappels sur le courant électrique}
 
 \begin{defn}[Courant électrique]
 Un courant électrique est un mouvement de charges électriques. Il est caractérisé 
-par son \textbf{intensité}, qui mesure le débit de charges électriques qui traverse
+par son \emph{intensité}, qui mesure le débit de charges électriques qui traverse
 une unité de surface par unité de temps. Elle se mesure en ampères ($\ampere$)
 qui correspondent à des $\coulomb \usk \reciprocal \second$ et peut-être 
 positive ou négative.
@@ -176,7 +188,7 @@ la résistivité $\rho$
 \begin{equation}
 	\rho = \dfrac{1}{\gamma},
 \end{equation}
-qui s'exprime en $\ohm \reciprocal \meter$.
+qui s'exprime en $\ohm \usk \rp \meter$.
 
 \begin{defn}[Loi d'Ohm locale]
 	La loi d'Ohm locale est une relation constitutive, elle est donc spécifique
@@ -360,6 +372,16 @@ $\vecj$ en utilisant la loi d'Ohm
 	    + \dfrac{L - x}{|BM|^3}\right).
 \end{equation}
 
+\begin{figure}[]
+	\centering
+	\includegraphics[scale=0.8]{arctan}
+	\caption{Intensité relative traversant une section de sol située 
+		en $x = L/2$ jusqu'à la profondeur
+	$p$ en fonction du rapport de $p$ sur la distance inter-électrode $L$.
+	Le point vert correspond au point particulier $(3, 0.9)$.}%
+	\label{fig:arctan}
+\end{figure}
+
 On s'intéresse maintenant au cas où le point $M$ appartient au plan médian $
 x = L/2$ aux
 deux électrodes. Dans ce cas particulier, $j_x$ vaut
@@ -394,15 +416,6 @@ On obtient alors finalement
 	\dfrac{I_x}{I}(p) = \dfrac{2}{\pi}\arctan\left(\dfrac{2p}{L}\right).
 \end{equation}
 
-\begin{figure}[]
-	\centering
-	\includegraphics[scale=0.6]{arctan}
-	\caption{Intensité relative traversant une section de sol située 
-		en $x = L/2$ jusqu'à la profondeur
-	$p$ en fonction du rapport de $p$ sur la distance inter-électrode $L$.
-	Le point vert correspond au point particulier $(3, 0.9)$.}%
-	\label{fig:arctan}
-\end{figure}
 Sur la Figure~\ref{fig:arctan}, on a tracé l'évolution de l'intensité relative traversant
 une section de sol située en $x = L/2$ 
 jusqu'à la profondeur $p$ en fonction du rapport de $p$ sur 
@@ -412,9 +425,9 @@ jusqu'à la profondeur $3L$. En augmentant la distance $L$ entre les deux élect
 on peut alors sonder le sol à une profondeur plus élevée.
 
 \subsection{Résistivité apparente}
-\begin{figure}[]
+\begin{figure}[t]
 	\centering
-	\includegraphics[scale=0.65]{resistivite_apparente}
+	\includegraphics[scale=0.8]{resistivite_apparente}
 	\caption{Mesure de la résistivité d'un sol bicouche avec 2 électrodes
 		avec le montage à gauche et l'évolution schématique de la résistivité
 		apparente $\rho$ avec la distance $L$ entre les électrodes à droite.
@@ -425,6 +438,7 @@ on peut alors sonder le sol à une profondeur plus élevée.
 		$\rho_2$ avec $\rho_1 < \rho_2$.}%
 	\label{fig:apparente}
 \end{figure}
+
 Nous n'avons pour l'instant considéré que le cas idéal d'un sol de résistivité 
 uniforme $\rho$. Dans ce cas bien précis, la méthode des 4 électrodes permet de
 déterminer la résistivité exacte de ce dernier. 
@@ -453,3 +467,5 @@ la distance entre les deux électrodes (voir Fig.~\ref{fig:apparente}(b))
 En faisant varier la distance $L$ entre les deux électrodes, on est alors capable d'avoir
 une carte schématique de la résistivité du sol sondé et donc de connaître la 
 composition de ce dernier. 
+
+
