@@ -4,12 +4,16 @@
 *.swp
 *.bbl
 *.blg
+*.bcf
 *.toc
 *.out
 *.maf
 *.synctex.gz
 *.fls
 *.fdb_latexmk
+*.run.*
+*.snm
+*.nav
 todo
 
 
