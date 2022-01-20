@@ -163,8 +163,7 @@ La réponse est simple : cela permet \emph{d'éviter des erreurs grossières~!} 
 si j'aboutis à l'expression $a = b$, $a$ doit avoir la même dimension que $b$. 
 Si ce n'est pas le cas, je sais qu'il faut revoir mes calculs et/ou mon raisonnement.
 En plus d'éviter des erreurs, la dimension d'un objet physique 
-peut permettre de mieux comprendre à quoi il correspond (voir le TD sur le
-potentiel de Yukawa). 
+peut permettre de mieux comprendre à quoi il correspond. 
 
 \begin{attention}
 	L'homogénéité d'une expression n'assure pas sa validité~!
@@ -179,28 +178,31 @@ Quelques règles simples à retenir
 \begin{enumerate}
 	\item Si on multiplie deux grandeurs, l'unité du résultat est 
 	  la multiplication des unités des grandeurs de départ. Par exemple,
-	  une surface est homogène à une distance au carré car elle correspond
+	  une surface ($\meter \squared$)
+	  est homogène  à une distance au carré car elle correspond
 	  au produit d'une distance par une distance.
 	\item Dériver une grandeur par une autre revient, en terme de dimension,
-	  à diviser l'unité de la première par l'unité de la deuxième. Une vitesse
-	  est obtenue en dérivant une distance et est donc homogène à une distance
+		à diviser l'unité de la première par l'unité de la deuxième. Une vitesse ($\meter \usk \rp \second$)
+		est obtenue en dérivant une distance ($\meter$) par un temps ($\second$) 
+		et est donc homogène à une distance
 	  divisée par un temps. Pensez à la notation 
 	  $\dfrac{\mathrm{d}x}{\mathrm{d}t}$ pour vous en souvenir : dériver
-	  $x$ revient grossièrement à diviser une petite variation de $x$
-	  par une petite variation de $t$.
+	  $x$ par rapport à $t$ revient grossièrement à diviser une petite variation de $x$
+	  par une petite variation de $t$ (Ne faites pas ça pour dériver une fonction~!).
 	\item Inversement, lorsqu'on intègre une grandeur par rapport à une autre, cela
 	  revient à multiplier l'unité de la première par l'unité de la deuxième.
-	  Une pression intégrée sur une surface est donc homogène à une force.
+	  Une pression $(\newton \usk \meter \rpsquared$) intégrée sur une surface ($\meter \squared$) 
+	  est donc homogène à une force ($\newton$).
 \end{enumerate}
 
-\begin{attention}
+\begin{rema}
 \begin{itemize}
 	\item Le gradient, la divergence et le rotationnel correspondent à des 
 	opérations de dérivation.
-	\item On ne peux pas additionner deux grandeurs de dimensions 
+	\item On ne peut pas additionner deux grandeurs de dimensions 
 	  différentes~!
 \end{itemize}
-\end{attention}
+\end{rema}
 \subsection{Les unitées dérivées}
 Les unités dérivées qui possèdent leur propre nom peuvent poser problème car 
 on a tendance à oublier leur décomposition en unités SI.
@@ -210,14 +212,19 @@ situations.
 
 \subsubsection{Trouver une expression simple de cette unité dérivée}
 Imaginons que j'ai oublié comment les joules se décomposent dans le système international.
-Il suffit alors de me rappeler que l'énergie cinétique est une énergie et s'exprime
-comme le produit d'une masse par une vitesse au carré. J'en conclus que 
+Il suffit alors de me rappeler que l'énergie cinétique $E_c$ est une énergie et s'exprime
+comme le produit d'une masse $m$ par une vitesse $v$ au carré
+
+\begin{equation*}
+	E_c = \dfrac{1}{2} m v^2.
+\end{equation*}
+J'en conclus que 
 $\joule = \kilogram \usk \meter \squared \usk \second \rpsquared$. Cette méthode 
 peut s'appliquer à d'autres exemples
 \begin{itemize}
-	\item Joule : énergie cinétique (produit d'une masse par une vitesse au carré)
-	\item Newton : poids (produit d'une masse par une accélération)
-	\item Pascal : pression hydrostatique (produit d'une masse volumique par une accélération et par une distance)
+	\item Joule : énergie cinétique (produit d'une masse par une vitesse au carré),
+	\item Newton : poids (produit d'une masse par une accélération),
+	\item Pascal : pression hydrostatique (produit d'une masse volumique par une accélération et par une distance).
 \end{itemize}
 
 \subsubsection{Se ramener à une expression connue}
@@ -232,7 +239,7 @@ où $\epsilon_0$ est la permittivité diélectrique du vide en
 $\farad \usk \rp \meter$. Comment vérifier l'homogénéité de cette expression
 lorsqu'on a oublié la décomposition des Farad en unité SI~? On essaye de se 
 ramener à une expression connue du champ électrique, celui généré par une charge 
-$Q$
+$Q$ à une distance $r$
 
 \begin{equation*}
 	E_Q = \dfrac{Q}{4 \pi \epsilon_0 r^2}.
