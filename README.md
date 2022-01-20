@@ -8,4 +8,4 @@ Ce cours d'électromagnétisme s'adresse à des étudiant·e·s de deuxième ann
   2. Électrostatique dans les conducteurs
   3. Magnétostatique
   4. Étude macroscopique de l'aimantation
-  5. Équations de Maxwelle en régime variable
+  5. Équations de Maxwell en régime variable
