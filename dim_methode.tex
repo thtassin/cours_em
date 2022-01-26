@@ -103,7 +103,7 @@
 		  pratique permettant de 
 		  vérifier \emph{l'homogénéité} d'une formule physique en décomposant les 
 		  grandeurs physiques qu'elle met en jeu en un produit de grandeurs 
-		  de base : le système d'unité international 
+		  de base : le système d'unités international 
 		  (d'après \textit{Wikipédia}).
 		 \item Deux grandeurs sont homogènes si elles s'expriment dans les
 		   mêmes unités.
@@ -120,12 +120,12 @@ le monde. Il comporte 7 unités de base résumées dans le Tableau~\ref{usi}.
 	\begin{tabular}{lll}
 	\textbf{Grandeur} & \textbf{Unités} & \textbf{Symbole} \\ \hline
 	Masse & kilogramme & $\kilogram$ \\ 
-	temps & seconde & $\second$ \\
-	distance & mètre & $\meter$ \\
-	température & kelvin & $\kelvin$ \\
-	intensité électrique & ampère & $\ampere$ \\
-	quantité de matière & mole & $\mole$ \\
-	intensité lumineuse & candela & $\candela$
+	Temps & seconde & $\second$ \\
+	Distance & mètre & $\meter$ \\
+	Température & kelvin & $\kelvin$ \\
+	Intensité électrique & ampère & $\ampere$ \\
+	Quantité de matière & mole & $\mole$ \\
+	Intensité lumineuse & candela & $\candela$
 	\end{tabular}
 	\label{usi}
 \end{table}
@@ -147,8 +147,14 @@ infinité d'unités dérivées. Le Tableau~\ref{usi_deriv} fournit quelques exem
 	\label{usi_deriv}
 \end{table}
 
+\begin{rema}
+	Le symbole d'une unité est une majuscule lorsque son nom est 
+	tiré d'un nom propre comme, c'est le cas pour le newton. Le litre
+	$\liter$ est une exception à cette règle.
+\end{rema}
+
 \begin{defn}[Unité dérivée]
-Une \emph{unité dérivée} est une unité qui combine plusieurs unités fondamentales
+Une \emph{unité dérivée} est une unité qui associe plusieurs unités fondamentales
 (sous la forme d'un produit de puissances de plusieurs de ces unités de base).
 Ces unités dérivées ont parfois leur propre nom et symbole comme le newton
 $\newton$. Toute unité dérivée s'exprime en fonction des unités de base du système 
@@ -170,7 +176,8 @@ peut permettre de mieux comprendre à quoi il correspond.
 \end{attention}
 
 La vérification de l'homogénéité d'une expression peut être compliquée par la présence de certaines opérations,
-telle que la dérivation, ou par la présence d'unités dérivés. Nous allons maintenant voir comment surmonter 
+telle que la dérivation, ou par la présence d'unités dérivées. 
+Nous allons maintenant voir comment surmonter 
 ces difficultés.
 \subsection{Multiplication, dérivation et intégration}
 Quelques règles simples à retenir
@@ -187,8 +194,9 @@ Quelques règles simples à retenir
 		et est donc homogène à une distance
 	  divisée par un temps. Pensez à la notation 
 	  $\dfrac{\mathrm{d}x}{\mathrm{d}t}$ pour vous en souvenir : dériver
-	  $x$ par rapport à $t$ revient grossièrement à diviser une petite variation de $x$
-	  par une petite variation de $t$ (Ne faites pas ça pour dériver une fonction~!).
+	  $x$ par rapport à $t$ revient grossièrement à diviser une petite 
+	  variation de $x$ par une petite variation de~$t$ 
+	  (Ne faites pas ça pour dériver une fonction~!).
 	\item Inversement, lorsqu'on intègre une grandeur par rapport à une autre, cela
 	  revient à multiplier l'unité de la première par l'unité de la deuxième.
 	  Une pression $(\newton \usk \meter \rpsquared$) intégrée sur une surface ($\meter \squared$) 
