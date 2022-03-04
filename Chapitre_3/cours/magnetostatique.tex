@@ -90,7 +90,7 @@ devant la force de Lorentz.
 	particule est donc uniforme et circulaire.
 	
 	On se place dans
-	un référentiel polaire $(O, \er, \etheta)$. La position de la particule
+	un référentiel cylindrique$(O, \er, \etheta, \ez)$. La position de la particule
 	est donc repérée par ses coordonnées $(r, \theta)$. L'application du principe
 	fondamental de la dynamique à la particule dans le référentiel du
 	laboratoire supposé galiléen donne
@@ -98,11 +98,11 @@ devant la force de Lorentz.
 		m \dot{\vecv} = q \vecv \wedge \vecb,
 	\end{equation*}
 	où la notation $\dot{v}$ est utilisée pour la dérivée temporelle.
-	Dans un référentiel polaire et pour un mouvement circulaire uniforme, 
+	Dans un référentiel cylindrique et pour un mouvement circulaire uniforme, 
 	$\vecv = r\dot{\theta} \etheta = v_0 \etheta$ 
 	et $\dot{\vecv} = - v_0^2/r\er$. On obtient donc
 	\begin{equation*}
-		m \dfrac{v_0^2}{r}\er = -e v_0 \etheta \wedge \ez =e v_0 B \er \iff 
+		m \dfrac{v_0^2}{r}\er = e v_0 B\etheta \wedge \ez =e v_0 B \er \iff 
 		\dot{\theta} = \dfrac{eB}{m}
 	\end{equation*}
 	L'électron suit donc un mouvement circulaire uniforme à la vitesse angulaire
@@ -155,10 +155,10 @@ Le champ magnétique
 $\vecb$ généré par l'ensemble du circuit en $M$ est alors obtenu en additionnant les 
 contributions de chaque élément de ce dernier grâce au principe de superposition
 \begin{equation*}
-	\vecb(M) = \iiint_{P \in \mathcal{V}} \mathrm{\textbf{d}}\mitbf{B}^P(M)
+	\vecb(M) = \iiint_{P \in \mathcal{V}} \mathbf{d}\vec{B}^P(M)
 		 = \iiint_{P \in \mathcal{V}} \dfrac{\mu_0}
 		 {4 \pi} \vecj(P) \wedge 
-	          \dfrac{\mitbf{PM}}{||PM||^3} \dV
+          \dfrac{\mitbf{PM}}{||PM||^3} \dV
 \end{equation*}
 On aboutit ainsi à la loi de Biot et Savart.
 
@@ -187,7 +187,7 @@ On aboutit ainsi à la loi de Biot et Savart.
 	cette expression devient
 	\begin{equation}
 		\vecb(M) = \dfrac{\mu_0}{4 \pi} \int_{P \in \mathcal{C}} 
-	\dfrac{I \dl \wedge \mitbf{PM}}{||PM||^3}.
+	\dfrac{i \dl \wedge \mitbf{PM}}{||PM||^3}.
 	\end{equation}
 
 \begin{exemple}
@@ -416,11 +416,11 @@ $\mathcal{S}$.
 	Par définition du tube de champ, l'intégrale sur la surface 
 	latérale est nulle. Il reste donc 
 	\begin{equation*}
-		\iint_\mathcal{S_e} \vecb \cdot \ds_e =
-		- \iint_\mathcal{S_s} \vecb \cdot \ds_s 
+		\iint_{\mathcal{S}_e} \vecb \cdot \ds_e =
+		- \iint_{\mathcal{S}_s} \vecb \cdot \ds_s 
 		\iff
-		\displaystyle{\left\lvert\iint_\mathcal{S_e} \vecb \cdot \ds_e\right\rvert =
-		\left\lvert\iint_\mathcal{S_s} \vecb \cdot \ds_s\right\rvert}.
+		\displaystyle{\left\lvert\iint_{\mathcal{S}_e} \vecb \cdot \ds_e\right\rvert =
+		\left\lvert\iint_{\mathcal{S}_s} \vecb \cdot \ds_s\right\rvert}.
 	\end{equation*}
 	Le flux entrant dans la surface est égal au flux sortant de cette dernière.
 	De plus, la surface de sortie étant de taille plus importante que 
@@ -542,7 +542,7 @@ Finalement, l'expression~\ref{eq:tore} du champ magnétique se simplifie donc en
 \end{equation*}
 \subsection{Symétries de la distribution de courants}
 
-Si on applique ce principe au champ magnétique créé par une distribution 
+Si on applique le principe de Curie au champ magnétique créé par une distribution 
 de courants, cela revient à dire que les symétries de la distributions de 
 courants doivent se retrouver dans les symétries du champ magnétique. On en 
 déduit les règles suivantes
@@ -595,7 +595,7 @@ dans le sens de $\etheta$ qui passe par $M$
 (voir Fig~\ref{fig:magneto_tore}) et on applique le théorème d'Ampère à ce dernier
 
 \begin{equation*}
-	\oint_\mathcal{S} \vecb(M) \cdot \dl = \mu_0 I_\mathrm{int},
+	\oint_\mathcal{C} \vecb(M) \cdot \dl = \mu_0 I_\mathrm{int},
 	\label{eq:cavite_gauss}
 \end{equation*}
 où $I_\mathrm{int}$ est la courant enlacé par $\mathcal{C}$. On commence
