@@ -73,11 +73,11 @@ induite}.
 	
 	Il ne nous reste plus qu'à exprimer $PM^3$. Nous allons nous servir du
 	fait que $r \gg a$ pour obtenir un expression approchée de $PM^3$ en 
-	réalisat un développement limité. On a alors
+	réalisant un développement limité. On a alors
 	\begin{equation*}
 		PM^3 = \left[a^2\cos^2\psi + \left(r \sin \theta - a\sin \psi\right)^2 
 		+ r^2 \cos^2 \theta \right]^{3/2}
-		= r^3 \left[ 1 - 2\sin \theta \sin \psi \dfrac{a}{r} + \dfrac{a}{r^2}
+		= r^3 \left[ 1 - 2\sin \theta \sin \psi \dfrac{a}{r} + \dfrac{a^2}{r^2}
 		\right]^{3/2}.
 	\end{equation*}
 	Comme $r \gg a$, on peut alors réaliser un développement limité à l'ordre $1$
@@ -96,7 +96,7 @@ induite}.
 		\vecb(M) \approx \dfrac{\mu_0 Ia}{4 \pi r^3}
 		\int_0^{2\pi}\left(1 + \dfrac{3a\sin\theta\sin\psi}{r}\right)
 		\left[r \cos\psi\sin\theta\ex -r\sin\psi\cos\theta\ey
-		+ \left(a -r\sin\theta\sin\psi\right)\ez\right]\mathrm{d}\psi.
+		+ \left(a -r)\sin\theta\sin\psi\right)\ez\right]\mathrm{d}\psi.
 	\end{equation*}
 	On commence par calculer l'intégrale qui va nous permettre d'obtenir la composante
 	selon $\ex$ du champ magnétique. Cela donne
@@ -116,9 +116,10 @@ induite}.
 	Finalement, on obtient la composante selon $\ez$ en calculant
 	\begin{equation*}
 		\begin{array}{rcl}
-		\displaystyle \int^{2\pi}_0 \left(1 + \dfrac{3a \sin\theta\sin\psi}{r}\right)
+		\displaystyle \int^{2\pi}_0 \left(1 + \dfrac{3a \sin\theta\sin\psi}
+		{r}\right)
 		\left(a - r\sin\theta\sin\psi \right)\mathrm{d}{\psi}
-		&=& \left[ a \psi + r\sin\theta\sin\psi - 
+		&=& \left[ a \psi + r\sin\theta\cos\psi - 
 		\dfrac{3a^2\sin\theta\cos\psi}{r}\right]^{2\pi}_{0} \\ 
 		&-& \left[3a\sin^2\theta
 		\left(\dfrac{\psi}{2} - \dfrac{\sin(2\psi)}{4}\right)
