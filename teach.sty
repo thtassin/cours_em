@@ -16,26 +16,8 @@
 \RequirePackage[hmargin=2.5cm,vmargin=2cm]{geometry}
 \RequirePackage[margin=12pt, labelsep=endash, font=footnotesize, labelfont=bf]{caption}
 \RequirePackage{mytheme}
-% -----------------------------------
-% Options
-% -----------------------------------
-
-\newif\if@minitoc
-\DeclareOption{minitoc}{\@minitoctrue}
-
-\newif\if@titre
-\DeclareOption{titre}{\@titretrue}
-
-\newif\if@samecountexo
-\DeclareOption{samecountexo}{\@samecountexotrue}
-
-\ProcessOptions
-
-% Minitoc
-\if@minitoc
-    \RequirePackage{minitoc}    
-    \renewcommand{\mtctitle}{} 
-\fi
+\RequirePackage{minitoc}
+\renewcommand{\mtctitle}{Plan du chapitre} 
 
 % --------------------------------------------
 % Divers commandes
@@ -117,61 +99,38 @@
 % Chapter, Section, ...
 % -------------------------------------------------------
 % Chapter
-    \titleformat{\chapter}[block]
-     {\Large\bfseries\color{\teach@chapter@global@color}\vspace*{-2cm}}
-     {\raisebox{-\height}{\sffamily\scriptsize\MakeUppercase{\chaptertitlename}}%
-  \space\raisebox{-\height}{\bigchapternumber}\space}
- {0pt}
- {\printtitle}
+\titleformat{\chapter}[display] 
+    {\huge \selectfont \bfseries}
+    {\chaptertitlename\ \thechapter
+    }
+    %{\chaptertitlename\}% \thechapter}
+    {20pt}
+    {\Huge}
+    [\vspace{1cm}
+    \minitoc
+    ]
 
-\newlength\pretitlewidth
-\newcommand\bigchapternumber{\resizebox{24pt}{!}{\mdseries\sffamily\thechapter}}
-\newcommand{\printtitle}[1]{%
-  \settowidth{\pretitlewidth}{%
-    {\sffamily\scriptsize\MakeUppercase{\chaptertitlename}}\space
-    {\bigchapternumber}\space
-  }%
-  \ifnum\thechapter>0
-      \parbox[t]{\dimexpr\textwidth-\pretitlewidth}{%
-        \linespread{1.5}\selectfont
-        \hrule depth 1pt
-        \vspace{2ex}
-        \raggedright\Huge\sffamily\bfseries #1
-      }%
-      \else
-          \parbox[t]{\dimexpr\textwidth}{%
-        \linespread{1.5}\selectfont
-        \hrule depth 1pt
-        \vspace{2ex}
-        \raggedright\Huge\sffamily\bfseries #1
-          }%
-  \fi
-  \vspace{1em}
-
- \hrule depth 1pt
- \if@minitoc
-     \color{\teach@minitoc@global@color}
-     \ifnum\thechapter>0
-         \vspace{1em}
-         \fontfamily{lmss}\bfseries\selectfont Plan de ce chapitre\par 
-         \minitoc
-     \fi
- \fi
-}
+ \titleformat{name=\chapter,numberless}[display] 
+    {\huge \selectfont \bfseries}
+    {}
+    %{\chaptertitlename\}% \thechapter}
+    {20pt}
+    {\Huge}
 
 % Section
-\renewcommand{\thesection}{\Roman{section}.}
-\renewcommand\section{\@startsection {section}{1}{\z@}%
-     {-2.0ex \@plus -1ex \@minus -.2ex}%  before skip
-     {1.3ex \@plus.2ex}% after skip
-     {\color{\teach@section@title@txtcolor}\normalfont\Large\bfseries}}
+\renewcommand{\thesection}{\Roman{section}}
+\titleformat{\section}[block] 
+{\LARGE \selectfont \bfseries \color{\sectioncolor}}
+{\thesection.}
+{12pt}
+{}
 
-% Subsection
-\renewcommand{\thesubsection}{\arabic{subsection}.}
-\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
-{-2.25ex\@plus -1ex \@minus -.2ex}% 
-{1.0ex \@plus .2ex}%
-{\normalfont\large\bfseries}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\titleformat{\subsection}[block] 
+{\large \selectfont \bfseries}
+{\thesubsection.}
+{12pt}
+{}
 
 % Subsubsection
 \setcounter{secnumdepth}{4}
@@ -383,50 +342,17 @@
 \let\item\itemtmp
 }
 
-% Exercices
-
-\newcounter{count@exo}[chapter]
-\newenvironment{exo}[1][]
-{%
-\refstepcounter{count@exo}
-\ifx\hfuzz#1\hfuzz
-\renewcommand\teach@title{\teach@title@exo~\thecount@exo.}
-\else
-\renewcommand\teach@title{\teach@title@exo~\thecount@exo~(#1).}
-\fi
-\let\enumerate\exolist
-\vspace{1em}
-\begin{tabular}{@{\color{\teach@exo@rule@color}\vrule width \arrayvertrulewidth\hspace*{\arrayhspace}}l@{}}
-\begin{minipage}{\dimexpr\linewidth-\arrayhspace-\arrayvertrulewidth}
-\bgroup\fontfamily{lmss}\bfseries\selectfont 
-\textcolor{\teach@exo@title@txtcolor}{\teach@title}\egroup
-\par 
-\color{\teach@exo@body@txtcolor}
-}
-{
-\end{minipage}
-\end{tabular}
-\vspace{1em}
-}
-
 % Exercices corrigés
 
 \newcounter{count@exocor}[chapter]
 \newenvironment{exocor}[1][]
 {%
-\if@samecountexo
-    \refstepcounter{count@exo}
-    \label{enonce\thechapter\thecount@exo}
-    \def\counttmp{\thecount@exo}
-\else 
-    \refstepcounter{count@exocor}
-    \label{enonce\thechapter\thecount@exocor}
-    \def\counttmp{\thecount@exocor}
-\fi
+\refstepcounter{count@exocor}
+\label{enonce\thechapter\thecount@exocor}
 \ifx\hfuzz#1\hfuzz
-\renewcommand\teach@title{\teach@title@exo~\counttmp.}
+\renewcommand\teach@title{\teach@title@exo~\thecount@exocor.}
 \else
-\renewcommand\teach@title{\teach@title@exo~\counttmp~(#1).}
+\renewcommand\teach@title{\teach@title@exo~\thecount@exocor~(#1).}
 \fi
 \let\enumerate\exolist
 \vspace{1em}
@@ -439,8 +365,8 @@
 \textcolor{\teach@exo@title@txtcolor}{\teach@title}
 \egroup
 \hfill
-\hyperref[corrige\thechapter\counttmp]
-    {\small\texttt{[Corrig\'e page \pageref{corrige\thechapter\counttmp}]}}
+\hyperref[corrige\thechapter\thecount@exocor]
+    {\small\texttt{[Corrig\'e page \pageref{corrige\thechapter\thecount@exocor}]}}
 \egroup
 \par 
 }
