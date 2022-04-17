@@ -16,31 +16,13 @@
 \RequirePackage[a4paper,hmargin=2.5cm,vmargin=2cm]{geometry}
 \RequirePackage[margin=12pt, labelsep=endash, font=footnotesize, labelfont=bf]{caption}
 \RequirePackage{mytheme}
-% -----------------------------------
-% Options
-% -----------------------------------
-
-\newif\if@minitoc
-\DeclareOption{minitoc}{\@minitoctrue}
-
-\newif\if@titre
-\DeclareOption{titre}{\@titretrue}
-
-\newif\if@samecountexo
-\DeclareOption{samecountexo}{\@samecountexotrue}
-
-\ProcessOptions
-
-% Minitoc
-\if@minitoc
-    \RequirePackage{minitoc}    
-    \renewcommand{\mtctitle}{} 
-\fi
+\RequirePackage{minitoc}
 
 % --------------------------------------------
 % Divers commandes
 % --------------------------------------------
 \renewcommand{\emph}[1]{\textcolor{\teach@emph@color}{\textbf{#1}}}
+\renewcommand{\mtctitle}{Plan du chapitre} 
 
 % ---------------------------------------------
 % New length
@@ -96,69 +78,27 @@
                     labelindent=-4pt
                    }
 
-% Définition
-\newlist{defitemize}{itemize}{1}
-\setlist[defitemize,1]{%
-                       labelsep=*,
-                       label=$\blacktriangleright$,
-                       leftmargin=16pt,
-                       labelindent=0pt
-                      }
-
-\newlist{defenumerate}{enumerate}{1}
-\setlist[defenumerate,1]{%
-                         labelsep=*,
-                         label=\protect\bfseries\protect\selectfont\arabic*.,
-                         leftmargin=16pt,
-                         labelindent=-4pt
-                         }
-
-
 % -------------------------------------------------------
 % Chapter, Section, ...
 % -------------------------------------------------------
 % Chapter
-    \titleformat{\chapter}[block]
-     {\Large\bfseries\color{\teach@chapter@global@color}\vspace*{-2cm}}
-     {\raisebox{-\height}{\sffamily\scriptsize\MakeUppercase{\chaptertitlename}}%
-  \space\raisebox{-\height}{\bigchapternumber}\space}
- {0pt}
- {\printtitle}
+\titleformat{\chapter}[display] 
+    {\huge \selectfont \bfseries}
+    {\chaptertitlename\ \thechapter
+    }
+    %{\chaptertitlename\}% \thechapter}
+    {20pt}
+    {\Huge}
+    [\vspace{1cm}
+    \minitoc
+    ]
 
-\newlength\pretitlewidth
-\newcommand\bigchapternumber{\resizebox{24pt}{!}{\mdseries\sffamily\thechapter}}
-\newcommand{\printtitle}[1]{%
-  \settowidth{\pretitlewidth}{%
-    {\sffamily\scriptsize\MakeUppercase{\chaptertitlename}}\space
-    {\bigchapternumber}\space
-  }%
-  \ifnum\thechapter>0
-      \parbox[t]{\dimexpr\textwidth-\pretitlewidth}{%
-        \linespread{1.5}\selectfont
-        \hrule depth 1pt
-        \vspace{2ex}
-        \raggedright\Huge\sffamily\bfseries #1
-      }%
-      \else
-          \parbox[t]{\dimexpr\textwidth}{%
-        \linespread{1.5}\selectfont
-        \hrule depth 1pt
-        \vspace{2ex}
-        \raggedright\Huge\sffamily\bfseries #1
-          }%
-  \fi
-  \vspace{1em}
-
- \hrule depth 1pt
- \if@minitoc
-     \color{\teach@minitoc@global@color}
-     \ifnum\thechapter>0
-         \vspace{1em}
-         \fontfamily{lmss}\bfseries\selectfont Plan de ce chapitre\par 
-         \minitoc
-     \fi
- \fi
-}
+ \titleformat{name=\chapter,numberless}[display] 
+    {\huge \selectfont \bfseries}
+    {}
+    %{\chaptertitlename\}% \thechapter}
+    {20pt}
+    {\Huge}
 
 % Section
 \renewcommand{\thesection}{\Roman{section}.}
@@ -202,7 +142,6 @@
 \def\teach@title@exemple{Exemple}
 \def\teach@title@rem{Remarque}
 \def\teach@title@rems{Remarques}
-\def\teach@title@exo{Exercice}
 \def\teach@title@memento{À retenir}
 \def\teach@title@attention{Attention}
 \def\redefinetitle#1#2{\expandafter\renewcommand\csname teach@title@#1\endcsname{#2}}
@@ -329,88 +268,31 @@
 \let\item\itemtmp
 }
 
-% Exercices
-
-\newcounter{count@exo}[chapter]
-\newenvironment{exo}[1][]
-{%
-\refstepcounter{count@exo}
-\ifx\hfuzz#1\hfuzz
-\renewcommand\teach@title{\teach@title@exo~\thecount@exo.}
-\else
-\renewcommand\teach@title{\teach@title@exo~\thecount@exo~(#1).}
-\fi
-\let\enumerate\exolist
-\vspace{1em}
-\begin{tabular}{@{\color{\teach@exo@rule@color}\vrule width \arrayvertrulewidth\hspace*{\arrayhspace}}l@{}}
-\begin{minipage}{\dimexpr\linewidth-\arrayhspace-\arrayvertrulewidth}
-\bgroup\fontfamily{lmss}\bfseries\selectfont 
-\textcolor{\teach@exo@title@txtcolor}{\teach@title}\egroup
-\par 
-\color{\teach@exo@body@txtcolor}
-}
-{
-\end{minipage}
-\end{tabular}
-\vspace{1em}
-}
-
 % Exercices corrigés
 
 \newcounter{count@exocor}[chapter]
 \newenvironment{exocor}[1][]
 {%
-\if@samecountexo
-    \refstepcounter{count@exo}
-    \label{enonce\thechapter\thecount@exo}
-    \def\counttmp{\thecount@exo}
-\else 
-    \refstepcounter{count@exocor}
-    \label{enonce\thechapter\thecount@exocor}
-    \def\counttmp{\thecount@exocor}
-\fi
+\refstepcounter{count@exocor}
+\label{enonce\thechapter\thecount@exocor}
 \ifx\hfuzz#1\hfuzz
-\renewcommand\teach@title{\teach@title@exo~\counttmp.}
+\renewcommand\teach@title{Exercice~\thecount@exocor}
 \else
-\renewcommand\teach@title{\teach@title@exo~\counttmp~(#1).}
+\renewcommand\teach@title{Exercice~\thecount@exocor~--~#1}
 \fi
 \let\enumerate\exolist
 \vspace{1em}
-\begin{tabular}{@{\color{\teach@exo@rule@color}\vrule width \arrayvertrulewidth\hspace*{\arrayhspace}}l@{}}
-\begin{minipage}{\dimexpr\linewidth-\arrayhspace-\arrayvertrulewidth}
-\bgroup
-\fontfamily{lmss}\selectfont
-\bgroup
-\bfseries 
-\textcolor{\teach@exo@title@txtcolor}{\teach@title}
-\egroup
-\hfill
-\hyperref[corrige\thechapter\counttmp]
-    {\small\texttt{[Corrig\'e page \pageref{corrige\thechapter\counttmp}]}}
-\egroup
+{\noindent \large \textbf{\teach@title}}
+\vspace{1em}
 \par 
 }
 {
-\end{minipage}
-\end{tabular}
-\vspace{1em}
-}
-
-\newcommand{\breakexo}
-{
-\end{minipage}
-\end{tabular}
-\\[2mm]
-\begin{tabular}{@{\color{\teach@exo@rule@color}\vrule width \arrayvertrulewidth\hspace*{0mm}}l@{}}~\end{tabular}
-\\[2mm]
-\begin{tabular}{@{\color{\teach@exo@rule@color}\vrule width \arrayvertrulewidth\hspace*{0mm}}l@{}}~\end{tabular}
-\newpage
-\begin{tabular}{@{\color{\teach@exo@rule@color}\vrule width \arrayvertrulewidth\hspace*{0mm}}l@{}}~\end{tabular}
-\\[2mm]
-\begin{tabular}{@{\color{\teach@exo@rule@color}\vrule width \arrayvertrulewidth\hspace*{0mm}}l@{}}~\end{tabular}
-\\[2mm]
-\begin{tabular}{@{\color{\teach@exo@rule@color}\vrule width \arrayvertrulewidth\hspace*{\arrayhspace}}l@{}}
-\begin{minipage}{\dimexpr\linewidth-\arrayhspace-\arrayvertrulewidth}
+\vspace{0.5em}
+\begin{flushright}
+	\hyperref[corrige\thechapter\thecount@exocor]
+	{\small\texttt{[Corrig\'e page 
+	\pageref{corrige\thechapter\thecount@exocor}]}}
+\end{flushright}
 }
 
 % Corrigés
