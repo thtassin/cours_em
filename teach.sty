@@ -13,7 +13,7 @@
 \RequirePackage{multido}
 \RequirePackage{tabularx}
 \RequirePackage{hyperref}
-\RequirePackage[hmargin=2.5cm,vmargin=2cm]{geometry}
+\RequirePackage[a4paper,hmargin=2.5cm,vmargin=2cm]{geometry}
 \RequirePackage[margin=12pt, labelsep=endash, font=footnotesize, labelfont=bf]{caption}
 \RequirePackage{mytheme}
 % -----------------------------------
@@ -67,7 +67,8 @@
 \newlist{exempleslist}{enumerate}{1}
 \setlist[exempleslist,1]{%
             labelsep=*,
-            label=\protect\fontfamily{lmss}\protect\bfseries\protect\selectfont\arabic*.,
+            label=\protect\fontfamily{lmss}\protect\bfseries
+	    \protect\selectfont\arabic*.,
             leftmargin=16pt,
             labelindent=0pt
             }
@@ -247,73 +248,18 @@
 \newcommand{\teach@title}{}
 
 % Définition
-
-\newcounter{count@defn}[chapter]
-\newlength\teach@defn@box@height
-\newlength\teach@defn@box@depth
-\newlength\teach@defn@title@width
 \newenvironment{defn}[1][]
-{%
-\refstepcounter{count@defn}
-\let\itemize\defitemize
-\let\enumerate\defenumerate
-\begin{lrbox}{\teach@box}
-\begin{minipage}{\linewidth}
+{
 \begin{tcolorbox}[arc=1ex, colback=\teach@defn@bg@textcolor, 
        colframe=\teach@defn@bg@textcolor, left=3pt,
        right=3pt, top=3pt, bottom=2pt]
 \textbf{#1 :}
 
+
 }
 {
 \end{tcolorbox}
-\end{minipage}
-\end{lrbox}
 \vspace{1em}
-\usebox{\teach@box}
-\vspace{1em}
-}
-
-% breakex (ajout du 29/10/2018)
-
-\newcommand{\breakex}[1][\thecount@item]
-{%
-\ifnum\theindic@exemple@pluriel=1
-\end{exempleslist}
-\end{minipage}
-\end{lrbox}
-\vspace{1em}\arrayrulecolor{\teach@exemple@title@txtcolor}
-\begin{tabular}{|@{}Sl@{}}
-\multicolumn{1}{@{}l}{\fontfamily{lmss}\bfseries\selectfont\fcolorbox{\teach@exemple@title@txtcolor}{\teach@exemple@title@bgcolor}{\textcolor{\teach@exemple@title@txtcolor}{\teach@title\strut}}} \\
-\begin{tabular}{Sl@{}}
- \\[-10pt]
-\usebox{\teach@box}
-\end{tabular}
-\end{tabular}\par 
-\edef\tmptitle{\teach@title}
-\renewcommand{\teach@title}{\tmptitle{} -- Suite}
-\begin{lrbox}{\teach@box}
-\begin{minipage}{\dimexpr\linewidth-2\tabcolsep+6pt}
-\color{\teach@exemple@body@txtcolor}
-\restartlist{exempleslist}
-\begin{exempleslist}[start=#1]
-\else
-\end{minipage}
-\end{lrbox}
-\vspace{1em}\arrayrulecolor{\teach@exemple@title@txtcolor}
-\begin{tabular}{|@{}Sl@{}}
-\multicolumn{1}{@{}l}{\fontfamily{lmss}\bfseries\selectfont\fcolorbox{\teach@exemple@title@txtcolor}{\teach@exemple@title@bgcolor}{\textcolor{\teach@exemple@title@txtcolor}{\teach@title\strut}}} \\
-\begin{tabular}{Sl@{}}
- \\[-10pt]
-\usebox{\teach@box}
-\end{tabular}
-\end{tabular}\par 
-\edef\tmptitle{\teach@title}
-\renewcommand{\teach@title}{\tmptitle{} -- Suite}
-\begin{lrbox}{\teach@box}
-\begin{minipage}{\dimexpr\linewidth-2\tabcolsep+6pt}
-\color{\teach@exemple@body@txtcolor}
-\fi
 }
 
 % Exemple
@@ -560,4 +506,60 @@
 \vspace{1em}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Devoirs
 
+\newlength\teach@box@width
+
+\newcommand{\titredevoir}[3] % #1 : numéro du devoir / #2 : date / #3 : durée
+{
+\begin{center}
+\fontfamily{lmss}\selectfont
+\begin{lrbox}{\teach@box}
+\bgroup\Large\rule[0.25em]{15mm}{1pt}~\textbf{#1} \rule[0.25em]{15mm}{1pt}\egroup
+\end{lrbox}
+
+\usebox{\teach@box}
+\settowidth{\teach@box@width}{\usebox{\teach@box}}
+
+\medskip
+
+#2 --- #3
+
+\medskip
+
+\rule{\teach@box@width}{1pt}
+\end{center}
+}
+
+% Compétences
+
+\newcounter{count@competence}
+\newcounter{count@boucle}
+
+\newcommand{\competence}[2]{%
+   \stepcounter{count@competence}
+   \expandafter\gdef\csname compet\roman{count@competence}\endcsname{#1}%
+   \expandafter\gdef\csname bareme\roman{count@competence}\endcsname{#2}%
+}
+
+\def\gaddtotok#1{\global\tabtok\expandafter{\the\tabtok#1}}
+
+\newtoks\tabtok
+
+\newcommand{\tableofcompetences}{%
+\global\tabtok{\begin{tabularx}{\linewidth}{|X|r|}\hline}%
+   \multido{\i=1+1}{\thecount@competence}{\gaddtotok{\stepcounter{count@boucle}\csname compet\roman{count@boucle}\endcsname & \hspace*{1cm} / \csname bareme\roman{count@boucle}\endcsname ~pt\\\hline}}%
+   \gaddtotok{\end{tabularx}}%
+   \renewcommand{\arraystretch}{1.4}
+   \the\tabtok
+   \renewcommand{\arraystretch}{1}}
+   
+% Environnement devoir
+
+\newenvironment{devoir}[3]
+{%
+\titredevoir{#1}{#2}{#3}
+}
+{%
+\ifnum\thecount@competence>0\par\tableofcompetences\fi
+}
