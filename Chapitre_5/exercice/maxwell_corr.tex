@@ -1,7 +1,7 @@
-\section{Correction}
+\begin{corr}{Électromagnétisme en régime variable}
 
-\begin{corrige}
-	\begin{enumerate}
+\correction{Émission radioactive}
+	\begin{corrlist}
 		\item La distribution de charge est à symétrie sphérique et 
 		  ne dépend spatialement que de $r$. $\vece$ est donc de la forme
 		  \begin{equation*}
@@ -25,7 +25,7 @@
 		  Pour déterminer le membre de droite, il est nécessaire d'exprimer
 		  la charge $Q$ contenue dans la sphère à l'instant $t$. On a
 		  alors deux cas de figure
-		  \begin{enumerate}
+		  \begin{corrlist}
 			  \item si $t < \dfrac{r}{v_0}$, aucune charge n'est 
 			    sortie de la sphère. On a donc $Q = 0$,
 			  \item si $t \ge \dfrac{r}{v_0}$, toutes les charges
@@ -38,7 +38,7 @@
 					      \dfrac{r}{v_0}}{\tau}\right) - 1
 					   \right].
 			   \end{equation*}
-		  \end{enumerate}
+		  \end{corrlist}
 		  Finalement, on aboutit à l'expression de $\vece(M, t)$
 		  \begin{equation*}
 			  \boxed{
@@ -59,12 +59,12 @@
 	\item Pour déterminer $\rho(r, t)$, on exprime la charge $\delta Q(t)$ contenue
 	  entre les sphères de rayon $r$ et de rayon $r + \dr$ à l'instant 
 	  $t > \dfrac{r}{v_0}$ de deux manières
-	  \begin{enumerate}
+	  \begin{corrlist}
 		  \item $\delta Q(t) = Q(r + \dr, t) - Q(r, t) = \dd{Q}{r}(r, t) \dr
 		  = \dfrac{q_0}{v_0 \tau} \exp\left(-\dfrac{t - \dfrac{r}{v_0}}
 		  {\tau}\right) \dr$
 	  	  \item $\delta Q(t) = 4 \pi r^2 \dr \rho(r, t)$.
-	  \end{enumerate}
+	  \end{corrlist}
 	  En égalant les deux expressions, on obtient
 	  \begin{equation*}
 		  \boxed{
@@ -101,11 +101,11 @@
 		  \dd{\vece}{t} = - \dfrac{\vece}{\tau} = - \dfrac{\vecj}{\epsilon_0}.
 	  \end{equation*}
 	  L'équation de Maxwell-Ampère est bien vérifiée.
-	\end{enumerate}
-\end{corrige}
+	\end{corrlist}
 
-\begin{corrige}
-	\begin{enumerate}
+
+\correction{OPPH dans le vide illimité}
+	\begin{corrlist}
 		\item Pour déterminer l'équation de propagation du champ électrique
 		  dans le vide, on commence par écrire le rotationnel de 
 		  l'équation de Maxwell-Faraday
@@ -247,7 +247,7 @@
 	\item On note $v_e$ la vitesse de propagation de l'énergie. L'énergie 
 	      traversant la surface $S$ durant un instant $\dt$ s'exprime de deux
 	      manières équivalentes
-	      \begin{enumerate}
+	      \begin{corrlist}
 		      \item Il s'agit de la quantité d'énergie $\delta U$ contenue dans 
 			    un cylindre de section $S$ et de longueur 
 			    $\dz = v_e \dt$ (voir Fig.~\ref{fig:maxwell_bilan_ex})
@@ -270,8 +270,8 @@
 				  v_e = c.
 			  }
 			  \end{equation*}
-	     \end{enumerate}
-	\end{enumerate}
+	     \end{corrlist}
+	\end{corrlist}
 	\begin{figure}[htpb]
 		\centering
 		\includegraphics[scale=0.8]{bilan_exercice}
@@ -285,10 +285,10 @@
 		à la vitesse de la lumière. Attention, ce n'est pas forcément le
 		cas si l'onde n'est pas une OPPH.
 	\end{defn}
-\end{corrige}
 
-\begin{corrige}
-\begin{enumerate}
+
+\correction{Onde électromagnétique plane progressive}
+\begin{corrlist}
 	\item Le vecteur d'onde s'exprime $\mathbf{k} = \dfrac{k}{2}
 		(2 \ex + 2\ey + \ez)$ et sa norme vaut $k$. $k$ est relié à 
 	      $\lambda$ par la relation $k = \dfrac{2 \pi}{\lambda}$. Or la relation 
@@ -418,11 +418,11 @@
 	      \end{equation*}
 	      Cette relation traduit le fait que l'énergie se déplace à la vitesse
 	      $c$ dans le vide pour une OPPH.
-\end{enumerate}
-\end{corrige}
+\end{corrlist}
 
-\begin{corrige}
-	\begin{enumerate}
+
+\correction{Onde dans un métal}
+	\begin{corrlist}
 		\item Le champ électrique $\vece$ est relié au vecteur densité de courant
 		$\vecj$ par la loi d'Ohm locale dans les conducteurs
 		\begin{equation*}
@@ -647,5 +647,5 @@
 		      }
 	     \end{equation*}
 	     On retrouve bien la bonne expression.
-\end{enumerate}
-\end{corrige}
+\end{corrlist}
+\end{corr}
