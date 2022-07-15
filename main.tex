@@ -3,29 +3,7 @@
 % Version: 24 Novembre 2020
 % % % % % % % % % % % % % % % % % % % %% % % % % % % % % %% % % % % % % % % %
 \documentclass[12pt]{book}
-\usepackage{teach}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[french]{babel}
-\usepackage{amsmath,amssymb}
-\usepackage{framed}
-\usepackage{enumitem}
-\usepackage{palatino}
-\usepackage{natbib}
-\usepackage[sectionbib]{bibunits}
-\usepackage{pxfonts}
-\usepackage{hyperref}
-\usepackage[squaren,Gray,cdot]{SIunits}
-\usepackage{xcolor}
-\usepackage{graphicx}
-\usepackage{caption}
-
-\hypersetup{
-	colorlinks=True,
-	urlcolor=\colorlink,
-	linkcolor=\colorlink,
-	citecolor=\colorlink
-           }
+\usepackage[student]{cours}
 \newcommand{\todo}[1]{{\color{red} [TODO: #1]}}
 \renewcommand{\FrenchLabelItem}{\textbullet}
 % ----------------------------------------------------------------------------
@@ -98,7 +76,6 @@
 \include{Chapitre_1/cours/electrostatique}
 \nocite{*}
 \putbib[Chapitre_1/electrostatique]
-\newpage
 \include{Chapitre_1/exercice/electrostatique}
 \include{Chapitre_1/exercice/electrostatique_corr}
 \end{bibunit}
@@ -117,7 +94,6 @@
 \include{Chapitre_3/cours/magnetostatique}
 \nocite{*}
 \putbib[Chapitre_3/magnetostatique]
-\newpage
 \include{Chapitre_3/exercice/magnetostatique}
 \include{Chapitre_3/exercice/magnetostatique_corr}
 \end{bibunit}
@@ -136,7 +112,6 @@
 \include{Chapitre_5/cours/maxwell}
 \nocite{*}
 \putbib[Chapitre_5/maxwell]
-\newpage
 \include{Chapitre_5/exercice/maxwell}
 \include{Chapitre_5/exercice/maxwell_corr}
 \end{bibunit}
