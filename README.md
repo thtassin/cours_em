@@ -1,7 +1,7 @@
 # Cours d'électromagnétisme L2-STEP
 
 
-Ce cours d'électromagnétisme s'adresse à des étudiant·e·s de deuxième année de Licence STEP. Le cours est rédigé en LaTeX. Le template utilisé est une modification du package `teach.sty` téléchargeable à l'URL suivante https://www.mathweb.fr/euclide/les-packages-personnels-latex-stephane-pasquet/
+Ce cours d'électromagnétisme s'adresse à des étudiant·e·s de deuxième année de Licence STEP. Le cours est rédigé en LaTeX. Le template utilisé est fourni par le package `cours_template.sty` téléchargeable à l'URL suivante https://github.com/thtassin/cours_template
 
 ## Contenu
   1. Électrostatique
