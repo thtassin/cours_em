@@ -24,7 +24,7 @@ en régime permanent, c'est à dire généré par des charges immobiles dans le
 référentiel d'étude. Les phénomènes décrits dans ce chapitre sont 
 donc indépendants du temps.
 
-\begin{defn}[Régime permanent]
+\begin{defn}{Régime permanent}
 	On dit qu'un système fonctionne en régime permanent lorsque toutes les
 	grandeurs relatives à une région fixe de ce système sont indépendantes 
 	du temps.
@@ -48,7 +48,7 @@ De cette expérience découlent plusieurs observations:
 Ces observations expérimentales se résument dans \emph{la loi de Coulomb}. 
 
 
-\begin{defn}[Loi de Coulomb]
+\begin{defn}{Loi de Coulomb}
 	La force $\vecf_{1 \rightarrow 2}$ électrostatique
 	exercée par une charge $q_1$ située en un point $M_1$ sur une 
 	charge $q_2$ située en $M_2$ (voir Fig.~\ref{fig:coulomb}) est donnée par
@@ -115,7 +115,7 @@ interaction gravitationnelle est quant à elle toujours attractive.
 	                                  \dfrac{m_1 m_2}{||M_1M_2||^2}
 					  \mitbf{e}_{M_1M_2}$ \\[1em]
 		$q_1$			&	$m_1$ \\[1em]
-		$\pieps$		&	$-\mathcal{G}$\\
+		$\dfrac{1}{4 \pi \epsilon_0}$		&	$-\mathcal{G}$\\
 	\end{tabular}
 \end{table}
 
@@ -180,12 +180,12 @@ et la vitesse est un champ vectoriel.
 Une particule chargée exerce alors une force électrostatique sur une autre particule 
 par l'intermédiaire du \emph{champ électrostatique} noté $\vece$.
 
-\begin{defn}[Le champ électrostatique]
+\begin{defn}{Le champ électrostatique}
 	Le champ électrostatique $\vece$ créé par une particule de charge $q$
 	située au point $M$ de l'espace en un point $P$ est donné par
 
 	\begin{equation}
-		\vece(P) = \pieps \dfrac{q}{||MP||^2}\mitbf{e}_{MP},
+		\vece(P) = \dfrac{q}{4 \pi \epsilon_0 ||MP||^2}\mitbf{e}_{MP},
 	\end{equation}
 	où $\mitbf{e}_{MP}$ est le vecteur unitaire dirigé de $M$ vers $P$.
 	Le champ électrostatique est un champ vectoriel, à chaque point 
@@ -207,7 +207,7 @@ En effet, on constate expérimentalement que le champ électrostatique créé pa
 $N$ particules au point $P$ est égal à la somme de tous les champs
 électrostatiques créés par toutes les charges.
 
-\begin{defn}[Principe de superposition]
+\begin{defn}{Principe de superposition}
 	On considère un ensemble de $N$ particules chargées. Chaque particule $i$
 	porte la charge $q_i$ et se trouve en un point $M_i$ de l'espace. Chacune
 	d'elle créé en un point $P$ de l'espace un champ électrostatique $\vece_i(P)$.
@@ -215,7 +215,7 @@ $N$ particules au point $P$ est égal à la somme de tous les champs
 
 	\begin{equation}
 		\vece(P) = \sum_{i=1}^{N} \vece_i(P)
-			 = \pieps \sum_{i=1}^{N} \dfrac{q_i}{||M_i P||^2}
+			 =  \sum_{i=1}^{N} \dfrac{q_i}{4 \pi \epsilon_0 ||M_i P||^2}
 			   \mitbf{e}_{M_i P}.
 		\label{eq:superposition}
 	\end{equation}
@@ -260,8 +260,8 @@ En utilisant le principe de superposition, le champ électrostatique $\vece(P)$
 créé au point $P$ de l'espace par une distribution volumique de charge $\rho$
 contenue dans un volume $\mathcal{V}$ est
 \begin{equation}
-	\vece(P) = \pieps \iiint_{M \in \mathcal{V}} 
-	\dfrac{\rho(M) \mathrm{d}\tau_M}{||MP||^2}\mitbf{e}_{MP},
+	\vece(P) =  \iiint_{M \in \mathcal{V}} 
+	\dfrac{\rho(M) \mathrm{d}\tau_M}{4 \pi \epsilon_0 ||MP||^2}\mitbf{e}_{MP},
 \end{equation}
 où $\dfrac{\rho(M) \mathrm{d}\tau_M}{||MP||^2}\mitbf{e}_{MP}$ est le champ 
 électrique créé par le petit volume $\mathrm{d}\tau_M$ au point $P$.
@@ -296,8 +296,8 @@ créé au point $P$ de l'espace par une distribution surfacique de charge $\sigm
 contenue sur une surface $\mathcal{S}$ est
 
 \begin{equation}
-	\vece(P) = \pieps \iint_{M \in \mathcal{S}} 
-	\dfrac{\sigma(M) \mathrm{d}S_M}{||MP||^2}\mitbf{e}_{MP},
+	\vece(P) = \iint_{M \in \mathcal{S}} 
+	\dfrac{\sigma(M) \mathrm{d}S_M}{4 \pi \epsilon_0 ||MP||^2}\mitbf{e}_{MP},
 \end{equation}
 où $\dfrac{\sigma(M) \mathrm{d}S_M}{||MP||^2}\mitbf{e}_{MP}$ est le champ 
 électrique créé par la petite surface $\mathrm{d}S_M$ au point $P$.
@@ -336,8 +336,8 @@ créé au point $P$ de l'espace par une distribution surfacique de charge $\lamb
 contenue sur un fil $\mathcal{L}$ est
 
 \begin{equation}
-	\vece(P) = \pieps \int_{M \in \mathcal{L}} 
-	\dfrac{\lambda(M) \mathrm{d}\ell_M}{||MP||^2}\mitbf{e}_{MP},
+	\vece(P) = \int_{M \in \mathcal{L}} 
+	\dfrac{\lambda(M) \mathrm{d}\ell_M}{4 \pi \epsilon_0 ||MP||^2}\mitbf{e}_{MP},
 \end{equation}
 où $\dfrac{\lambda(M) \mathrm{d}\ell_M}{||MP||^2}\mitbf{e}_{MP}$ est le champ 
 électrique créé par la petite portion $\mathrm{d}\ell_M$ au point $P$.
@@ -376,7 +376,7 @@ par cette charge en
 un point $M(r, \theta, \phi)$ est donné par
 
 \begin{equation*}
-	\vece(M) = \pieps \dfrac{Q}{||OM||^2}\er 
+	\vece(M) = \dfrac{Q}{4 \pi \epsilon_0 ||OM||^2}\er 
 	         = \dfrac{Q}{4\pi\epsilon_0 r^2}\er.
 \end{equation*}
 Nous allons nous servir de cet exemple simple pour retrouver certaines propriétés
@@ -404,7 +404,7 @@ sphère $\mathcal{S}$ de rayon $r$ centrée en $O$ à laquelle $M$
 appartient (voir Fig.~\ref{fig:gauss}b). 
 La surface $\mathcal{S}$ est ici une surface \emph{fermée}.
 
-\begin{defn}[Surface fermée]
+\begin{defn}{Surface fermée}
 	Une surface est dite fermée si elle délimite un volume intérieur 
 	et un volume extérieur. La surface d'une feuille de papier n'est par 
 	exemple pas une surface fermée alors que la surface d'un ballon de baudruche
@@ -414,7 +414,7 @@ La surface $\mathcal{S}$ est ici une surface \emph{fermée}.
 On commence alors par déterminer 
 l'expression du vecteur surface élémentaire $\mathrm{d}\mathbf{S}$. 
 
-\begin{defn}[Vecteur surface élémentaire]
+\begin{defn}{Vecteur surface élémentaire}
 	À chaque élément d'aire $\mathrm{d}S$ centré en $M$ de la surface $\mathcal{S}$, 
 	on  affecte un vecteur surface élémentaire $\mathrm{d}\mathbf{S}$ 
 	qui vérifie les propriétés suivantes
@@ -445,7 +445,7 @@ $\mathcal{S}$, on introduit la notion de flux. On retrouve cette notion en géog
  où le flux migratoire exprime le nombre de personnes entrant ou sortant d'un 
  pays.
 
-\begin{defn}[Flux d'un champ de vecteurs]
+\begin{defn}{Flux d'un champ de vecteurs}
 	Soit $M$ un point d'un surface fermée en lequel règne un champ $\vece(M)$.
 	Soit $\mathrm{d}\mathbf{S}$ le vecteur surface élémentaire sortant associé
 	à l'élément de surface centré en $M$. \emph{Le flux sortant élémentaire} du 
@@ -481,7 +481,7 @@ Cette propriété que nous venons de montrer pour une charge ponctuelle est en
 fait une propriété du champ électrique connue sous le nom de \emph{théorème de 
 Gauss}.
 
-\begin{defn}[Théorème de Gauss]
+\begin{defn}{Théorème de Gauss}
 	Le flux du champ électrique $\vece$ à travers une surface fermée $\mathcal{S}$, 
 	qui délimite un volume $\mathcal{V}$, est égale à la charge incluse $Q$ dans
 	ce volume, divisé par $\epsilon_0$
@@ -497,7 +497,7 @@ Le théorème de Gauss peut-être traduit sous une forme locale,
 appelée l'\emph{équation de 
 Maxwell-Gauss}, qui relie alors le champ électrique à la distribution de charge.
 
-\begin{defn}[Équation de Maxwell-Gauss]
+\begin{defn}{Équation de Maxwell-Gauss}
 	L'équation de Maxwell-Gauss relie le champ électrique $\vece$ à la 
 	distribution de charge $\rho$
 
@@ -535,7 +535,7 @@ $E_\varphi$ sont nulles. On a donc
 Ce résultat se généralise à un champ électrostatique $\vece$ quelconque sous la
 forme de l'équation de Maxwell-Faraday.
 
-\begin{defn}[Équation de Maxwell-Faraday]
+\begin{defn}{Équation de Maxwell-Faraday}
 	Un champ électrique $\vece$ en régime statique, c'est-à-dire
 	indépendant du temps, vérifie 
 	\begin{equation}
@@ -551,7 +551,7 @@ Comme l'équation de Maxwell-Gauss, l'équation de Maxwell-Faraday peut se mettr
 sous une forme intégrale, en exprimant la circulation du champ électrique sur
 une courbe fermée $\mathcal{C}$.
 
-\begin{defn}[Circulation d'un champ de vecteurs]
+\begin{defn}{Circulation d'un champ de vecteurs}
 	Soit $\mathbf{W}$ un champ de vecteur et $\mathcal{C}$ un arc de courbe orienté 
 	dans l'espace. On appelle circulation du champ de vecteurs $\mathbf{W}$
 	le long de $\mathcal{C}$ la quantité
@@ -564,7 +564,7 @@ une courbe fermée $\mathcal{C}$.
 	Un contour doit toujours être orienté !
 \end{attention}
 
-\begin{defn}[Circulation du champ électrostatique]
+\begin{defn}{Circulation du champ électrostatique}
 La circulation du champ électrostatique $\vece$ le long d'un contour fermé
 orienté $\mathcal{C}$ est nul
 \begin{equation}
@@ -579,7 +579,7 @@ de définir un champ scalaire $V$,
 défini à une constante près, 
 tel que $\vece = -\gradient V$.
 
-\begin{defn}[Potentiel électrostatique]
+\begin{defn}{Potentiel électrostatique}
 	Le champ électrostatique étant à rotationnel nul, il existe un 
 	champ scalaire $V$, appelé potentiel électrostatique, tel qu'en
 	tout point de l'espace
@@ -607,7 +607,7 @@ Maxwell-Gauss~\ref{eq:MG}, on obtient
 	              -\dfrac{\rho}{\epsilon_0}.
 \end{equation*}
 
-\begin{defn}[Équation de Poisson]
+\begin{defn}{Équation de Poisson}
 	Le potentiel électrique suit l'équation de Poisson
 	\begin{equation}
 		\laplacien V = -\dfrac{\rho}{\epsilon_0}.
@@ -617,7 +617,7 @@ Maxwell-Gauss~\ref{eq:MG}, on obtient
 De plus, la force électrostatique est une force conservative. On peut alors
 définir une \emph{énergie potentielle} qui lui est associée.
 
-\begin{defn}[Énergie potentielle électrostatique]
+\begin{defn}{Énergie potentielle électrostatique}
 	La force électrostatique $\vecf$ est une force conservative, elle 
 	dérive donc d'une énergie potentielle $E_p$
 
@@ -670,7 +670,7 @@ Nous nous intéressons dans cette partie aux propriétés spatiales du champ $\v
 Nous allons voir comment les \emph{lignes de champ} nous renseignent sur sa répartition 
 dans l'espace.
 
-\begin{defn}[Ligne de champ]
+\begin{defn}{Ligne de champ}
 	Une ligne de champ est une courbe tangente en chaque point au vecteur 
 	du champ de vecteurs considéré, orientée dans le sens du champ. Deux
 	lignes de champ ne peuvent pas se croiser.
@@ -855,7 +855,7 @@ Finalement, l'expression~\ref{eq:cavite1} du champ électrique se simplifie
 \end{equation}
 \subsection{Symétries de la distribution de charges}
 
-\begin{defn}[Principe de Curie]
+\begin{defn}{Principe de Curie}
 	Lorsque les causes produisent des effets, les symétries présentes dans les
 	causes doivent se retrouver dans celles des effets.
 \end{defn}
@@ -865,7 +865,7 @@ de charges, cela revient à dire que les symétries de la distribution de
 charges doivent se retrouver dans les symétries du champ électrique. On en 
 déduit les règles suivantes
 
-\begin{defn}[Symétries de $\vece$ et de la distribution de charge]
+\begin{defn}{Symétries de $\vece$ et de la distribution de charge}
   \begin{itemize}
   \item si $(\Pi)$ est un plan de symétrie de la distribution de charge et que 
     $M$ appartient à $(\Pi)$, alors obligatoirement $\vece(M)$ doit 
